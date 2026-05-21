@@ -1,0 +1,251 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 20px rgba(6,182,212,0.08);
+}
+
+.topBar {
+  background: var(--deep);
+  color: var(--seafoam);
+  font-size: 12px;
+  padding: 6px 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 2rem;
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.logoIcon { font-size: 28px; }
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--teal);
+  letter-spacing: -0.02em;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.menu a {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-muted);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.menu a:hover { color: var(--teal); }
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  background: var(--pearl);
+  border: 1.5px solid var(--border);
+  border-radius: 24px;
+  padding: 4px 8px 4px 16px;
+  gap: 4px;
+  transition: border-color 0.2s;
+}
+
+.searchForm:focus-within { border-color: var(--aqua); }
+
+.searchForm input {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  width: 200px;
+  font-family: var(--font-body);
+  color: var(--text);
+  outline: none;
+}
+
+.searchForm button {
+  background: none;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.searchForm button:hover { background: var(--border); }
+
+.cartBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.cartBtn:hover { background: var(--pearl); }
+
+.badge {
+  position: absolute;
+  top: 0; right: 0;
+  background: var(--aqua);
+  color: white;
+  font-size: 10px;
+  font-weight: 500;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .topBar { display: none; }
+  .nav { padding: 0 1rem; gap: 0.75rem; }
+  .hamburger { display: flex; }
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    gap: 0.75rem;
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .menu.open { display: flex; }
+  .menu a { font-size: 16px; color: var(--text); }
+  .searchForm { display: none; }
+  .logoText { font-size: 1.3rem; }
+}
+
+.rightNav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.loginBtn {
+  padding: 8px 16px;
+  background: var(--teal);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.loginBtn:hover {
+  background: var(--deep);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+}
+
+.userMenu {
+  position: relative;
+}
+
+.userBtn {
+  background: var(--pearl);
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.userBtn:hover {
+  background: var(--border);
+  border-color: var(--teal);
+}
+
+.userDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 12px;
+  min-width: 200px;
+  margin-top: 4px;
+  z-index: 1000;
+}
+
+.userInfo {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+.userInfo p {
+  margin: 4px 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.userInfo p strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.logoutBtn {
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--aqua);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.logoutBtn:hover {
+  background: var(--deep);
+  transform: translateY(-2px);
+}

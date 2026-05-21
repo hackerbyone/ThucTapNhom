@@ -1,0 +1,119 @@
+.page {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-family: var(--font-display, sans-serif);
+  color: var(--text);
+}
+
+.message {
+  text-align: center;
+  padding: 50px;
+  color: var(--text-muted, #6b7280);
+  font-size: 16px;
+}
+
+.tableWrapper {
+  overflow-x: auto; /* Giúp bảng không bị vỡ trên điện thoại */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  background-color: #f3f4f6;
+  text-align: left;
+  padding: 15px;
+  border-bottom: 2px solid #e5e7eb;
+  color: #374151;
+  font-weight: 600;
+}
+
+.table td {
+  padding: 15px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:hover td {
+  background-color: #f9fafb; /* Hiệu ứng sáng dòng khi di chuột */
+}
+
+.orderId {
+  font-weight: bold;
+  color: #111827;
+}
+
+.totalAmount {
+  color: #0ea5e9;
+  font-weight: bold;
+}
+
+/* Nút Hủy Đơn */
+.btnCancel {
+  padding: 8px 16px;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btnCancel:hover {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+}
+
+/* Các trạng thái đơn hàng */
+.statusBadge {
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statusPending   { color: #f59e0b; }
+.statusShipping  { color: #3b82f6; }
+.statusCompleted { color: #10b981; }
+.statusCancelled { color: #ef4444; }
+.statusWaiting   { color: #e65100; }
+.statusDeposit   { color: #1565c0; }
+
+/* Nút Thanh toán */
+.btnPay {
+  padding: 8px 16px;
+  background-color: #06b6d4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+  margin-right: 6px;
+}
+
+.btnPay:hover {
+  background-color: #0e7490;
+  transform: translateY(-1px);
+}
+
+.actionCell {
+  white-space: nowrap;
+}

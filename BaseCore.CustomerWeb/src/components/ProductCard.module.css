@@ -1,0 +1,105 @@
+.card {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.25s, box-shadow 0.25s;
+  animation: fadeUp 0.4s ease forwards;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.imageWrap {
+  display: block;
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--pearl);
+}
+
+.imageWrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.card:hover .imageWrap img { transform: scale(1.06); }
+
+.discount {
+  position: absolute;
+  top: 10px; left: 10px;
+  background: #ef4444;
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.tag {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: rgba(6,182,212,0.9);
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.3;
+  transition: color 0.2s;
+}
+
+.name:hover { color: var(--teal); }
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: #f59e0b;
+}
+
+.rating span { color: var(--text-muted); font-size: 12px; }
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.price { font-size: 17px; font-weight: 600; color: var(--teal); }
+.oldPrice { font-size: 13px; color: #94a3b8; text-decoration: line-through; }
+
+.addBtn {
+  margin-top: 4px;
+  background: var(--pearl);
+  color: var(--teal);
+  border: 1.5px solid var(--aqua);
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.addBtn:hover {
+  background: var(--teal);
+  color: white;
+  border-color: var(--teal);
+}
