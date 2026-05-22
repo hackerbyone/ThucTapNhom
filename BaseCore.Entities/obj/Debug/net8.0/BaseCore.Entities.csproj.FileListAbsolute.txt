@@ -1,0 +1,222 @@
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.deps.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.pdb
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.pdb
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.pdb
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.AssemblyReference.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfoInputs.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfo.cs
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.CoreCompileInputs.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.Entities\obj\Debug\net8.0\BaseCore.E7D3D7DB.Up2Date
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.Entities\obj\Debug\net8.0\refint\BaseCore.Entities.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.pdb
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.Entities\obj\Debug\net8.0\ref\BaseCore.Entities.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.deps.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.pdb
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.pdb
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.pdb
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.AssemblyReference.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfoInputs.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfo.cs
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.CoreCompileInputs.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.E7D3D7DB.Up2Date
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.Entities\obj\Debug\net8.0\refint\BaseCore.Entities.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.pdb
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.Entities\obj\Debug\net8.0\ref\BaseCore.Entities.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.deps.json
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.pdb
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.pdb
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.pdb
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.AssemblyReference.cache
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfoInputs.cache
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfo.cs
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.CoreCompileInputs.cache
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.E7D3D7DB.Up2Date
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\refint\BaseCore.Entities.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.pdb
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\ref\BaseCore.Entities.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.deps.json
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.pdb
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.pdb
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.pdb
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.AssemblyReference.cache
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfoInputs.cache
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfo.cs
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.CoreCompileInputs.cache
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.E7D3D7DB.Up2Date
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\refint\BaseCore.Entities.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.pdb
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\ref\BaseCore.Entities.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.deps.json
+C:\Users\Admin\Desktop\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.pdb
+C:\Users\Admin\Desktop\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.pdb
+C:\Users\Admin\Desktop\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.pdb
+C:\Users\Admin\Desktop\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfo.cs
+C:\Users\Admin\Desktop\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.E7D3D7DB.Up2Date
+C:\Users\Admin\Desktop\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.Entities\obj\Debug\net8.0\refint\BaseCore.Entities.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.pdb
+C:\Users\Admin\Desktop\BaseCore\BaseCore.Entities\obj\Debug\net8.0\ref\BaseCore.Entities.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.deps.json
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.pdb
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.pdb
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.pdb
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.AssemblyReference.cache
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfoInputs.cache
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfo.cs
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.E7D3D7DB.Up2Date
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\refint\BaseCore.Entities.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.pdb
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\ref\BaseCore.Entities.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.deps.json
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.pdb
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.pdb
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.pdb
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.AssemblyReference.cache
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfoInputs.cache
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfo.cs
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.CoreCompileInputs.cache
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.E7D3D7DB.Up2Date
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\refint\BaseCore.Entities.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.pdb
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\ref\BaseCore.Entities.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.deps.json
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.pdb
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.pdb
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.pdb
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.AssemblyReference.cache
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfoInputs.cache
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfo.cs
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.CoreCompileInputs.cache
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.E7D3D7DB.Up2Date
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\refint\BaseCore.Entities.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.pdb
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.Entities\obj\Debug\net8.0\ref\BaseCore.Entities.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.deps.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.pdb
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.pdb
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.pdb
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.AssemblyReference.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfoInputs.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfo.cs
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.CoreCompileInputs.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.E7D3D7DB.Up2Date
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\refint\BaseCore.Entities.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.pdb
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\ref\BaseCore.Entities.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.deps.json
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.pdb
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.pdb
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.pdb
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.AssemblyReference.cache
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfoInputs.cache
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfo.cs
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.CoreCompileInputs.cache
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.E7D3D7DB.Up2Date
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\refint\BaseCore.Entities.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.pdb
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.Entities\obj\Debug\net8.0\ref\BaseCore.Entities.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.deps.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.pdb
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.pdb
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.pdb
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.AssemblyReference.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfoInputs.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfo.cs
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.CoreCompileInputs.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.E7D3D7DB.Up2Date
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\refint\BaseCore.Entities.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.pdb
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\ref\BaseCore.Entities.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.deps.json
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.pdb
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.pdb
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.pdb
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.AssemblyReference.cache
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfoInputs.cache
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfo.cs
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.CoreCompileInputs.cache
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.E7D3D7DB.Up2Date
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\refint\BaseCore.Entities.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.pdb
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.Entities\obj\Debug\net8.0\ref\BaseCore.Entities.dll
+D:\shopcacanh\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.deps.json
+D:\shopcacanh\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.dll
+D:\shopcacanh\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Entities.pdb
+D:\shopcacanh\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.dll
+D:\shopcacanh\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.dll
+D:\shopcacanh\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.Common.pdb
+D:\shopcacanh\BaseCore\BaseCore.Entities\bin\Debug\net8.0\BaseCore.DTO.pdb
+D:\shopcacanh\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.AssemblyReference.cache
+D:\shopcacanh\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\shopcacanh\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfoInputs.cache
+D:\shopcacanh\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.AssemblyInfo.cs
+D:\shopcacanh\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.csproj.CoreCompileInputs.cache
+D:\shopcacanh\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.E7D3D7DB.Up2Date
+D:\shopcacanh\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.dll
+D:\shopcacanh\BaseCore\BaseCore.Entities\obj\Debug\net8.0\refint\BaseCore.Entities.dll
+D:\shopcacanh\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.pdb
+D:\shopcacanh\BaseCore\BaseCore.Entities\obj\Debug\net8.0\ref\BaseCore.Entities.dll
+D:\shopcacanh\BaseCore\BaseCore.Entities\obj\Debug\net8.0\BaseCore.Entities.sourcelink.json
