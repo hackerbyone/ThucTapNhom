@@ -1,0 +1,591 @@
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\appsettings.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\ocelot.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.staticwebassets.endpoints.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.exe
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.deps.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.runtimeconfig.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\FluentValidation.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\IPAddressRange.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.Extensions.DiagnosticAdapter.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\Ocelot.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.AssemblyReference.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfoInputs.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfo.cs
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.CoreCompileInputs.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cs
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\scopedcss\bundle\BaseCore.ApiGateway.styles.css
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.development.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.603A33FC.Up2Date
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\refint\BaseCore.ApiGateway.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.genruntimeconfig.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\ref\BaseCore.ApiGateway.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\RobotVibot_WithoutChange-main\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\appsettings.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\ocelot.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.staticwebassets.endpoints.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.exe
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.deps.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.runtimeconfig.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\FluentValidation.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\IPAddressRange.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.Extensions.DiagnosticAdapter.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Ocelot.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.AssemblyReference.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfoInputs.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfo.cs
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.CoreCompileInputs.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cs
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\scopedcss\bundle\BaseCore.ApiGateway.styles.css
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.development.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.603A33FC.Up2Date
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\refint\BaseCore.ApiGateway.dll
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.genruntimeconfig.cache
+D:\Code\CSharp\RobotVibot_WithoutChange-main\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\ref\BaseCore.ApiGateway.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\appsettings.json
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\ocelot.json
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.staticwebassets.endpoints.json
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.exe
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.deps.json
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.runtimeconfig.json
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.pdb
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\IPAddressRange.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.Extensions.DiagnosticAdapter.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Ocelot.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.AssemblyReference.cache
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfoInputs.cache
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfo.cs
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.CoreCompileInputs.cache
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\scopedcss\bundle\BaseCore.ApiGateway.styles.css
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\swae.build.ex.cache
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.603A33FC.Up2Date
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\refint\BaseCore.ApiGateway.dll
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.pdb
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.genruntimeconfig.cache
+C:\Users\pc\Downloads\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\ref\BaseCore.ApiGateway.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\appsettings.json
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\ocelot.json
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.staticwebassets.endpoints.json
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.exe
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.deps.json
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.runtimeconfig.json
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.pdb
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\IPAddressRange.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.Extensions.DiagnosticAdapter.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Ocelot.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.AssemblyReference.cache
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfoInputs.cache
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfo.cs
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.CoreCompileInputs.cache
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\scopedcss\bundle\BaseCore.ApiGateway.styles.css
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.603A33FC.Up2Date
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\refint\BaseCore.ApiGateway.dll
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.pdb
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.genruntimeconfig.cache
+C:\Users\ndngu\SOURCE\BaseCore\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\ref\BaseCore.ApiGateway.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\appsettings.json
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\ocelot.json
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.staticwebassets.endpoints.json
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.exe
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.deps.json
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.runtimeconfig.json
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.pdb
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\IPAddressRange.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.Extensions.DiagnosticAdapter.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Ocelot.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfo.cs
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\scopedcss\bundle\BaseCore.ApiGateway.styles.css
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\swae.build.ex.cache
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.603A33FC.Up2Date
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\refint\BaseCore.ApiGateway.dll
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.pdb
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.genruntimeconfig.cache
+C:\Users\Admin\Desktop\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\ref\BaseCore.ApiGateway.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\appsettings.json
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\ocelot.json
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.staticwebassets.endpoints.json
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.exe
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.deps.json
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.runtimeconfig.json
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.pdb
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\IPAddressRange.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.Extensions.DiagnosticAdapter.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Ocelot.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.AssemblyReference.cache
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfoInputs.cache
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfo.cs
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.CoreCompileInputs.cache
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\scopedcss\bundle\BaseCore.ApiGateway.styles.css
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\swae.build.ex.cache
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.603A33FC.Up2Date
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\refint\BaseCore.ApiGateway.dll
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.pdb
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.genruntimeconfig.cache
+C:\Users\Dat\Documents\FW\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\ref\BaseCore.ApiGateway.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\appsettings.json
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\ocelot.json
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.staticwebassets.endpoints.json
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.exe
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.deps.json
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.runtimeconfig.json
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\FluentValidation.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\IPAddressRange.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.Extensions.DiagnosticAdapter.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Ocelot.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.AssemblyReference.cache
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.GeneratedMSBuildEditorConfig.editorconfig
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfoInputs.cache
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfo.cs
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.CoreCompileInputs.cache
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cs
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cache
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\scopedcss\bundle\BaseCore.ApiGateway.styles.css
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.development.json
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\swae.build.ex.cache
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.603A33FC.Up2Date
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\refint\BaseCore.ApiGateway.dll
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.genruntimeconfig.cache
+D:\Học kỳ 2 - Năm 3\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\ref\BaseCore.ApiGateway.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\appsettings.json
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\ocelot.json
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.staticwebassets.endpoints.json
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.exe
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.deps.json
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.runtimeconfig.json
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\FluentValidation.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\IPAddressRange.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.Extensions.DiagnosticAdapter.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Ocelot.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.AssemblyReference.cache
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.GeneratedMSBuildEditorConfig.editorconfig
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfoInputs.cache
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfo.cs
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.CoreCompileInputs.cache
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cs
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cache
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\scopedcss\bundle\BaseCore.ApiGateway.styles.css
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.development.json
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets\msbuild.BaseCore.ApiGateway.Microsoft.AspNetCore.StaticWebAssets.props
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets\msbuild.BaseCore.ApiGateway.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets\msbuild.build.BaseCore.ApiGateway.props
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BaseCore.ApiGateway.props
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BaseCore.ApiGateway.props
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.pack.json
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.603A33FC.Up2Date
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\refint\BaseCore.ApiGateway.dll
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.genruntimeconfig.cache
+D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\ref\BaseCore.ApiGateway.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\appsettings.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\ocelot.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.staticwebassets.endpoints.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.exe
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.deps.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.runtimeconfig.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\FluentValidation.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\IPAddressRange.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.Extensions.DiagnosticAdapter.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Ocelot.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.AssemblyReference.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.GeneratedMSBuildEditorConfig.editorconfig
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfoInputs.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfo.cs
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.CoreCompileInputs.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cs
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\scopedcss\bundle\BaseCore.ApiGateway.styles.css
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.development.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\swae.build.ex.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.603A33FC.Up2Date
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\refint\BaseCore.ApiGateway.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.genruntimeconfig.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\ref\BaseCore.ApiGateway.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\appsettings.json
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\ocelot.json
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.staticwebassets.endpoints.json
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.exe
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.deps.json
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.runtimeconfig.json
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\FluentValidation.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\IPAddressRange.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.Extensions.DiagnosticAdapter.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Ocelot.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.AssemblyReference.cache
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.GeneratedMSBuildEditorConfig.editorconfig
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfoInputs.cache
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfo.cs
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.CoreCompileInputs.cache
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cs
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cache
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\scopedcss\bundle\BaseCore.ApiGateway.styles.css
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.development.json
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets\msbuild.BaseCore.ApiGateway.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets\msbuild.BaseCore.ApiGateway.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets\msbuild.build.BaseCore.ApiGateway.props
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BaseCore.ApiGateway.props
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BaseCore.ApiGateway.props
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.pack.json
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.603A33FC.Up2Date
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\refint\BaseCore.ApiGateway.dll
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.genruntimeconfig.cache
+D:\Zalo Data\zaloo\BaseCore\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\ref\BaseCore.ApiGateway.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\appsettings.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\ocelot.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.staticwebassets.endpoints.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.exe
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.deps.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.runtimeconfig.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\FluentValidation.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\IPAddressRange.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.Extensions.DiagnosticAdapter.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Ocelot.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.AssemblyReference.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.GeneratedMSBuildEditorConfig.editorconfig
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfoInputs.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfo.cs
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.CoreCompileInputs.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cs
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\scopedcss\bundle\BaseCore.ApiGateway.styles.css
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.development.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\swae.build.ex.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.603A33FC.Up2Date
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\refint\BaseCore.ApiGateway.dll
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.genruntimeconfig.cache
+D:\Học kỳ 2 - Năm 3\Công nghệ WEB\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\ref\BaseCore.ApiGateway.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\appsettings.json
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\ocelot.json
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.staticwebassets.endpoints.json
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.exe
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.deps.json
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.runtimeconfig.json
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\FluentValidation.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\IPAddressRange.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.Extensions.DiagnosticAdapter.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Ocelot.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.AssemblyReference.cache
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.GeneratedMSBuildEditorConfig.editorconfig
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfoInputs.cache
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfo.cs
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.CoreCompileInputs.cache
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cs
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cache
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\scopedcss\bundle\BaseCore.ApiGateway.styles.css
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.development.json
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets\msbuild.BaseCore.ApiGateway.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets\msbuild.BaseCore.ApiGateway.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets\msbuild.build.BaseCore.ApiGateway.props
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BaseCore.ApiGateway.props
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BaseCore.ApiGateway.props
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.pack.json
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.603A33FC.Up2Date
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\refint\BaseCore.ApiGateway.dll
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.genruntimeconfig.cache
+D:\Zalo Data\zaloo\basecore (1)\basecore (1)\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\ref\BaseCore.ApiGateway.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\appsettings.json
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\ocelot.json
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.staticwebassets.endpoints.json
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.exe
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.deps.json
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.runtimeconfig.json
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\AutoMapper.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\FluentValidation.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\IPAddressRange.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.Extensions.DiagnosticAdapter.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Ocelot.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.AssemblyReference.cache
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.GeneratedMSBuildEditorConfig.editorconfig
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfoInputs.cache
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.AssemblyInfo.cs
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.csproj.CoreCompileInputs.cache
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cs
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.MvcApplicationPartsAssemblyInfo.cache
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\scopedcss\bundle\BaseCore.ApiGateway.styles.css
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.development.json
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.603A33FC.Up2Date
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\refint\BaseCore.ApiGateway.dll
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.pdb
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\BaseCore.ApiGateway.genruntimeconfig.cache
+D:\shopcacanh\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\ref\BaseCore.ApiGateway.dll

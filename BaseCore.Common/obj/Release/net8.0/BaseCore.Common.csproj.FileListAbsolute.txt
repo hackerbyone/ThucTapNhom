@@ -1,0 +1,13 @@
+D:\shopcacanh\BaseCore\BaseCore.Common\bin\Release\net8.0\BaseCore.Common.deps.json
+D:\shopcacanh\BaseCore\BaseCore.Common\bin\Release\net8.0\BaseCore.Common.dll
+D:\shopcacanh\BaseCore\BaseCore.Common\bin\Release\net8.0\BaseCore.Common.pdb
+D:\shopcacanh\BaseCore\BaseCore.Common\obj\Release\net8.0\BaseCore.Common.csproj.AssemblyReference.cache
+D:\shopcacanh\BaseCore\BaseCore.Common\obj\Release\net8.0\BaseCore.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\shopcacanh\BaseCore\BaseCore.Common\obj\Release\net8.0\BaseCore.Common.AssemblyInfoInputs.cache
+D:\shopcacanh\BaseCore\BaseCore.Common\obj\Release\net8.0\BaseCore.Common.AssemblyInfo.cs
+D:\shopcacanh\BaseCore\BaseCore.Common\obj\Release\net8.0\BaseCore.Common.csproj.CoreCompileInputs.cache
+D:\shopcacanh\BaseCore\BaseCore.Common\obj\Release\net8.0\BaseCore.Common.sourcelink.json
+D:\shopcacanh\BaseCore\BaseCore.Common\obj\Release\net8.0\BaseCore.Common.dll
+D:\shopcacanh\BaseCore\BaseCore.Common\obj\Release\net8.0\refint\BaseCore.Common.dll
+D:\shopcacanh\BaseCore\BaseCore.Common\obj\Release\net8.0\BaseCore.Common.pdb
+D:\shopcacanh\BaseCore\BaseCore.Common\obj\Release\net8.0\ref\BaseCore.Common.dll
