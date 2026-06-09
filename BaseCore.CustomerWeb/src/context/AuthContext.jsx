@@ -46,11 +46,12 @@ export function AuthProvider({ children }) {
     return user.role === role || (user.roles && user.roles.includes(role))
   }
 
-  // Check if user is admin
   const isAdmin = () => hasRole('admin') || hasRole('Admin')
+  const isWarehouse = () => hasRole('warehouse') || hasRole('Warehouse')
+  const isAdminOrWarehouse = () => isAdmin() || isWarehouse()
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, loading, hasRole, isAdmin }}>
+    <AuthContext.Provider value={{ user, login, logout, loading, hasRole, isAdmin, isWarehouse, isAdminOrWarehouse }}>
       {children}
     </AuthContext.Provider>
   )

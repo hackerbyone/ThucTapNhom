@@ -3,7 +3,14 @@
     "allow": [
       "Bash(Get-ChildItem -Path \"D:\\\\shopcacanh\\\\BaseCore\\\\BaseCore.CustomerWeb\" -Recurse -Directory)",
       "Bash(Select-Object -ExpandProperty FullName)",
-      "Bash(Sort-Object)"
+      "Bash(Sort-Object)",
+      "Bash(Get-ChildItem -Path \"D:\\\\shopcacanh\\\\BaseCore\\\\Cong_Nghe_Web\" -Directory)",
+      "Bash(Select-Object Name)",
+      "Bash(Sort-Object Name)",
+      "Bash(grep -E \"\\\\.cs$\")",
+      "Bash(xargs grep -l \"Entities\\\\|Repository\\\\|Services\")",
+      "Bash(dotnet build *)",
+      "Bash(npx vite *)"
     ]
   }
 }

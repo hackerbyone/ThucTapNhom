@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { productService } from '../services/product/productService'
+import { reviewService } from '../services/review/reviewService'
 import { useCart } from '../context/CartContext'
 import ProductCard from '../components/ProductCard'
 import styles from './ProductDetail.module.css'
@@ -23,6 +24,9 @@ export default function ProductDetail() {
   const [selectedGender, setSelectedGender] = useState(null)
   const [genderError, setGenderError] = useState('')
 
+  // ── Review state (chỉ hiển thị, không viết tại đây) ──
+  const [reviewData, setReviewData] = useState(null)
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -38,6 +42,13 @@ export default function ProductDetail() {
             .slice(0, 4)
           setRelated(filtered)
         }
+
+        // Load reviews
+        try {
+          const rv = await reviewService.getByProduct(parseInt(id))
+          setReviewData(rv)
+        } catch { /* reviews không quan trọng */ }
+
       } catch (err) {
         console.error('Error fetching product:', err)
         setError(err.message)
@@ -45,7 +56,6 @@ export default function ProductDetail() {
         setLoading(false)
       }
     }
-
     fetchProduct()
   }, [id])
 
@@ -86,6 +96,19 @@ export default function ProductDetail() {
 
   const discount = product.oldPrice ? Math.round((1 - product.price / product.oldPrice) * 100) : null
   const productImages = product.imageUrl ? [product.imageUrl] : ['https://via.placeholder.com/400']
+
+  // Hàm tính giá theo giới tính đã chọn
+  const getPrice = () => {
+    if (isGenderProduct && !selectedGender) return product.price || 0
+    if (selectedGender === 'Cặp') {
+      // Cặp đôi = 2 con, nên giá = 2x
+      return product.pairPrice || ((product.price || 0) * 2)
+    }
+    return product.price || 0
+  }
+
+  const currentPrice = getPrice()
+  const totalPrice = currentPrice * qty
 
   const handleAdd = async () => {
     if (isGenderProduct && !selectedGender) {
@@ -146,15 +169,24 @@ export default function ProductDetail() {
           <div className={styles.info}>
             <h1 className={styles.name}>{product.name}</h1>
 
-            <div className={styles.rating}>
-              {'★'.repeat(Math.round(product.rating || 5))}{'☆'.repeat(5 - Math.round(product.rating || 5))}
-              <span>{(product.rating || 5).toFixed(1)}/5 ({product.reviews || 0} đánh giá)</span>
-            </div>
+            {(() => {
+              const avg   = reviewData?.averageRating ?? product.rating ?? 0
+              const count = reviewData?.totalCount    ?? product.reviews ?? 0
+              const stars = Math.max(0, Math.min(5, Math.round(avg)))
+              return (
+                <div className={styles.rating}>
+                  <span style={{ color: '#f59e0b' }}>{'★'.repeat(stars)}</span>
+                  <span style={{ color: '#d1d5db' }}>{'☆'.repeat(5 - stars)}</span>
+                  <span>{avg.toFixed(1)}/5 ({count} đánh giá)</span>
+                </div>
+              )
+            })()}
 
             <div className={styles.priceBlock}>
-              <span className={styles.price}>{formatPrice(product.price)}</span>
+              <span className={styles.price}>{formatPrice(currentPrice)}</span>
               {product.oldPrice && <span className={styles.oldPrice}>{formatPrice(product.oldPrice)}</span>}
               {discount && <span className={styles.save}>Tiết kiệm {discount}%</span>}
+              {selectedGender === 'Cặp' && <span style={{ fontSize: '0.8rem', color: '#666', marginLeft: '0.5rem' }}>(2 con)</span>}
             </div>
 
             {/* Stock info */}
@@ -230,6 +262,13 @@ export default function ProductDetail() {
               </div>
             </div>
 
+            {(isGenderProduct && selectedGender) || !isGenderProduct ? (
+              <div style={{ background: '#f9f9f9', borderRadius: 8, padding: '0.6rem 0.9rem', marginBottom: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span style={{ fontSize: '0.85rem', color: '#666' }}>Tạm tính:</span>
+                <strong style={{ fontSize: '1.05rem', color: '#e65100' }}>{formatPrice(totalPrice)}</strong>
+              </div>
+            ) : null}
+
             <div className={styles.actions}>
               <button className={`${styles.btnAdd} ${added ? styles.added : ''}`} onClick={handleAdd} disabled={isOutOfStock}>
                 {added ? '✓ Đã thêm vào giỏ' : '🛒 Thêm vào giỏ hàng'}
@@ -253,7 +292,13 @@ export default function ProductDetail() {
         {/* Tabs */}
         <div className={styles.tabs}>
           <div className={styles.tabNav}>
-            {[['desc','Mô tả'], ['care','Cách chăm sóc'], ['habitat','Môi trường'], ['compatible','Nuôi chung']].map(([key, label]) => (
+            {[
+              ['desc','Mô tả'],
+              ['care','Cách chăm sóc'],
+              ['habitat','Môi trường'],
+              ['compatible','Nuôi chung'],
+              ['reviews', `⭐ Đánh giá (${reviewData?.totalCount ?? 0})`],
+            ].map(([key, label]) => (
               <button key={key} className={`${styles.tabBtn} ${tab === key ? styles.activeTab : ''}`} onClick={() => setTab(key)}>
                 {label}
               </button>
@@ -264,6 +309,74 @@ export default function ProductDetail() {
             {tab === 'care' && <p>{product.careInstructions || 'Thông tin chăm sóc sẽ được cập nhật'}</p>}
             {tab === 'habitat' && <p>{product.environment || 'Thông tin môi trường sẽ được cập nhật'}</p>}
             {tab === 'compatible' && <p>Thông tin nuôi chung sẽ được cập nhật</p>}
+            {tab === 'reviews' && (
+              <div>
+                {/* Average rating summary */}
+                {reviewData && reviewData.totalCount > 0 ? (
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '2rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
+                    <div style={{ textAlign: 'center', minWidth: 100 }}>
+                      <div style={{ fontSize: '3rem', fontWeight: 700, color: '#f59e0b', lineHeight: 1 }}>
+                        {reviewData.averageRating.toFixed(1)}
+                      </div>
+                      <div style={{ fontSize: '1.3rem', margin: '0.3rem 0' }}>
+                        <span style={{ color: '#f59e0b' }}>{'★'.repeat(Math.round(reviewData.averageRating))}</span>
+                        <span style={{ color: '#d1d5db' }}>{'☆'.repeat(5 - Math.round(reviewData.averageRating))}</span>
+                      </div>
+                      <div style={{ fontSize: '0.82rem', color: '#888' }}>{reviewData.totalCount} đánh giá</div>
+                    </div>
+                    <div style={{ flex: 1, minWidth: 160 }}>
+                      {reviewData.ratingBreakdown?.map(rb => (
+                        <div key={rb.star} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
+                          <span style={{ width: 22, fontSize: '0.82rem', color: '#666', textAlign: 'right' }}>{rb.star}★</span>
+                          <div style={{ flex: 1, height: 8, background: '#eee', borderRadius: 4, overflow: 'hidden' }}>
+                            <div style={{
+                              width: `${reviewData.totalCount > 0 ? (rb.count / reviewData.totalCount * 100) : 0}%`,
+                              height: '100%', background: '#f59e0b', borderRadius: 4, transition: 'width 0.3s'
+                            }} />
+                          </div>
+                          <span style={{ width: 18, fontSize: '0.82rem', color: '#999' }}>{rb.count}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <p style={{ color: '#888', marginBottom: '1rem' }}>Chưa có đánh giá nào cho sản phẩm này.</p>
+                )}
+
+                {/* Hướng dẫn đánh giá */}
+                <p style={{ color: '#888', marginBottom: '1.2rem', fontSize: '0.88rem', background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 8, padding: '0.65rem 1rem' }}>
+                  💡 Bạn có thể đánh giá sản phẩm trong mục{' '}
+                  <Link to="/orders" style={{ color: 'var(--teal, #2a9d8f)', fontWeight: 600 }}>Đơn hàng của tôi</Link>
+                  {' '}sau khi đặt hàng thành công.
+                </p>
+
+                {/* Review list */}
+                {reviewData?.reviews?.length > 0 && (
+                  <div>
+                    {reviewData.reviews.map(rv => (
+                      <div key={rv.id} style={{
+                        border: '1px solid #eee', borderRadius: 10, padding: '1rem 1.2rem',
+                        marginBottom: '0.8rem', background: '#fafafa'
+                      }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <strong style={{ fontSize: '0.95rem' }}>{rv.customerName}</strong>
+                            <span style={{ fontSize: '1rem' }}>
+                              <span style={{ color: '#f59e0b' }}>{'★'.repeat(rv.rating)}</span>
+                              <span style={{ color: '#d1d5db' }}>{'☆'.repeat(5 - rv.rating)}</span>
+                            </span>
+                          </div>
+                          <span style={{ fontSize: '0.8rem', color: '#bbb' }}>
+                            {new Date(rv.createdAt).toLocaleDateString('vi-VN')}
+                          </span>
+                        </div>
+                        <p style={{ margin: 0, color: '#444', fontSize: '0.92rem', lineHeight: 1.55 }}>{rv.comment}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
 

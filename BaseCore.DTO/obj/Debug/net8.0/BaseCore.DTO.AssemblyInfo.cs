@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BaseCore.DTO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f61fa91e2dc66330b52fa7a7db3132301cb77ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b153bf4504f545f691152ad1bbe37f76016cd384")]
 [assembly: System.Reflection.AssemblyProductAttribute("BaseCore.DTO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BaseCore.DTO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

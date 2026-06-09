@@ -10,13 +10,23 @@ export const authService = {
     return handleResponse(response, 'Login failed');
   },
 
-  register: async (username, password, email, name) => {
+  // FIX: thêm phone vào register
+  register: async (username, password, email, name, phone = '') => {
     const response = await fetch(buildUrl('/api/auth/register'), {
       method: 'POST',
       headers: getHeaders(),
-      body: JSON.stringify({ username, password, email, name }),
+      body: JSON.stringify({ username, password, email, name, phone }),
     });
     return handleResponse(response, 'Register failed');
+  },
+
+  loginWithGoogle: async (accessToken) => {
+    const response = await fetch(buildUrl('/api/auth/google'), {
+      method: 'POST',
+      headers: getHeaders(),
+      body: JSON.stringify({ accessToken }),
+    });
+    return handleResponse(response, 'Đăng nhập Google thất bại');
   },
 
   logout: () => {

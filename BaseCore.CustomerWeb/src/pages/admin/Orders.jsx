@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import { buildUrl, getHeaders, handleResponse } from '../../services/utils/apiClient';
 
 const STATUS_LIST = [
-  { value: 'Pending',   label: 'Chờ xử lý',  badge: 'badge-warning' },
-  { value: 'Shipping',  label: 'Đang giao',  badge: 'badge-info'    },
-  { value: 'Completed', label: 'Đã giao',    badge: 'badge-success' },
-  { value: 'Cancelled', label: 'Đã hủy',     badge: 'badge-danger'  },
+  { value: 'WaitingDeposit', label: 'Chờ đặt cọc',   badge: 'badge-warning'   },
+  { value: 'DepositPaid',    label: 'Đã đặt cọc',    badge: 'badge-primary'   },
+  { value: 'Processing',     label: 'Đang xử lý',    badge: 'badge-info'      },
+  { value: 'Shipping',       label: 'Đang giao',      badge: 'badge-info'      },
+  { value: 'Completed',      label: 'Hoàn thành',     badge: 'badge-success'   },
+  { value: 'Cancelled',      label: 'Đã hủy',         badge: 'badge-danger'    },
 ];
 
 const statusLabel = (val) =>
@@ -72,10 +74,20 @@ function ConfirmModal({ message, onConfirm, onCancel }) {
 }
 
 export default function Orders() {
+  const now = new Date();
+  const YEARS = [];
+  for (let y = 2024; y <= now.getFullYear() + 1; y++) YEARS.push(y);
+
   const [orders, setOrders]         = useState([]);
   const [loading, setLoading]       = useState(true);
   const [filterStatus, setFilter]   = useState('');
   const [keyword, setKeyword]       = useState('');
+  const [fromDay, setFromDay]       = useState('');
+  const [fromMonth, setFromMonth]   = useState('');
+  const [fromYear, setFromYear]     = useState('');
+  const [toDay, setToDay]           = useState('');
+  const [toMonth, setToMonth]       = useState('');
+  const [toYear, setToYear]         = useState('');
   const [selected, setSelected]     = useState(null);
   const [detail, setDetail]         = useState(null);
   const [detailLoading, setDL]      = useState(false);
@@ -128,10 +140,12 @@ export default function Orders() {
     setUpdating(true);
     try {
       await orderService.updateStatus(id, status);
-      // Update state directly — no reload needed
+      // Cập nhật danh sách đơn hàng
       setOrders(prev => prev.map(o => o.id === id ? { ...o, status } : o));
+      // Cập nhật đơn đang xem trong detail modal
       if (selected && selected.id === id) {
         setSelected(prev => ({ ...prev, status }));
+        setDetail(prev => prev ? { ...prev, status } : prev);
       }
     } catch (e) {
       setError('Cập nhật thất bại: ' + e.message);
@@ -162,7 +176,23 @@ export default function Orders() {
     const matchKeyword = keyword
       ? String(o.id).includes(keyword) || (o.shippingAddress || '').toLowerCase().includes(keyword.toLowerCase())
       : true;
-    return matchStatus && matchKeyword;
+    const orderDate = new Date(o.orderDate);
+    let matchFrom = true;
+    if (fromYear || fromMonth || fromDay) {
+      const y = parseInt(fromYear) || 2024;
+      const m = parseInt(fromMonth) || 1;
+      const d = parseInt(fromDay) || 1;
+      matchFrom = orderDate >= new Date(y, m - 1, d, 0, 0, 0);
+    }
+    let matchTo = true;
+    if (toYear || toMonth || toDay) {
+      const y = parseInt(toYear) || now.getFullYear();
+      const m = parseInt(toMonth) || 12;
+      const dInMonth = new Date(y, m, 0).getDate();
+      const d = parseInt(toDay) || dInMonth;
+      matchTo = orderDate <= new Date(y, m - 1, d, 23, 59, 59);
+    }
+    return matchStatus && matchKeyword && matchFrom && matchTo;
   });
 
   const countBy = (s) => orders.filter(o => o.status === s).length;
@@ -216,8 +246,9 @@ export default function Orders() {
 
           <div className="card">
             <div className="card-header">
-              <div className="row align-items-center">
-                <div className="col-md-4">
+              {/* Hàng 1: tìm kiếm + trạng thái */}
+              <div className="row align-items-center mb-2">
+                <div className="col-md-5">
                   <div className="input-group">
                     <input
                       type="text"
@@ -231,7 +262,7 @@ export default function Orders() {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-4">
                   <select className="form-control" value={filterStatus} onChange={e => setFilter(e.target.value)}>
                     <option value="">-- Tất cả trạng thái --</option>
                     {STATUS_LIST.map(s => (
@@ -239,13 +270,77 @@ export default function Orders() {
                     ))}
                   </select>
                 </div>
-                <div className="col-md-2">
-                  <button className="btn btn-secondary" onClick={() => { setFilter(''); setKeyword(''); }}>
-                    <i className="fas fa-redo mr-1"></i> Reset
-                  </button>
-                </div>
                 <div className="col-md-3 text-right">
                   <span className="text-muted">Tổng: <strong>{filtered.length}</strong> đơn</span>
+                </div>
+              </div>
+
+              {/* Hàng 2: lọc theo ngày */}
+              <div className="row align-items-center">
+                <div className="col-auto">
+                  <small className="text-muted font-weight-bold">Lọc theo ngày:</small>
+                </div>
+                <div className="col-auto">
+                  <small className="text-muted mr-1">Từ</small>
+                </div>
+                <div className="col-auto px-1">
+                  <select className="form-control form-control-sm" style={{ width: 75 }} value={fromDay} onChange={e => setFromDay(e.target.value)}>
+                    <option value="">Ngày</option>
+                    {Array.from({ length: 31 }, (_, i) => i + 1).map(d => (
+                      <option key={d} value={d}>Ngày {d}</option>
+                    ))}
+                  </select>
+                </div>
+                <div className="col-auto px-1">
+                  <select className="form-control form-control-sm" style={{ width: 100 }} value={fromMonth} onChange={e => setFromMonth(e.target.value)}>
+                    <option value="">Tháng</option>
+                    {Array.from({ length: 12 }, (_, i) => i + 1).map(m => (
+                      <option key={m} value={m}>Tháng {m}</option>
+                    ))}
+                  </select>
+                </div>
+                <div className="col-auto px-1">
+                  <select className="form-control form-control-sm" style={{ width: 85 }} value={fromYear} onChange={e => setFromYear(e.target.value)}>
+                    <option value="">Năm</option>
+                    {YEARS.map(y => <option key={y} value={y}>Năm {y}</option>)}
+                  </select>
+                </div>
+
+                <div className="col-auto px-2">
+                  <small className="text-muted">đến</small>
+                </div>
+
+                <div className="col-auto px-1">
+                  <select className="form-control form-control-sm" style={{ width: 75 }} value={toDay} onChange={e => setToDay(e.target.value)}>
+                    <option value="">Ngày</option>
+                    {Array.from({ length: 31 }, (_, i) => i + 1).map(d => (
+                      <option key={d} value={d}>Ngày {d}</option>
+                    ))}
+                  </select>
+                </div>
+                <div className="col-auto px-1">
+                  <select className="form-control form-control-sm" style={{ width: 100 }} value={toMonth} onChange={e => setToMonth(e.target.value)}>
+                    <option value="">Tháng</option>
+                    {Array.from({ length: 12 }, (_, i) => i + 1).map(m => (
+                      <option key={m} value={m}>Tháng {m}</option>
+                    ))}
+                  </select>
+                </div>
+                <div className="col-auto px-1">
+                  <select className="form-control form-control-sm" style={{ width: 85 }} value={toYear} onChange={e => setToYear(e.target.value)}>
+                    <option value="">Năm</option>
+                    {YEARS.map(y => <option key={y} value={y}>Năm {y}</option>)}
+                  </select>
+                </div>
+
+                <div className="col-auto ml-2">
+                  <button className="btn btn-secondary btn-sm" onClick={() => {
+                    setFilter(''); setKeyword('');
+                    setFromDay(''); setFromMonth(''); setFromYear('');
+                    setToDay(''); setToMonth(''); setToYear('');
+                  }}>
+                    <i className="fas fa-redo mr-1"></i>Đặt lại
+                  </button>
                 </div>
               </div>
             </div>
@@ -263,9 +358,10 @@ export default function Orders() {
                     <thead className="thead-dark">
                       <tr>
                         <th>Mã đơn</th>
+                        <th>Khách hàng</th>
                         <th>Ngày đặt</th>
-                        <th>Địa chỉ giao</th>
                         <th>Tổng tiền</th>
+                        <th>Đặt cọc</th>
                         <th>Trạng thái</th>
                         <th>Thao tác</th>
                       </tr>
@@ -276,28 +372,38 @@ export default function Orders() {
                         return (
                           <tr key={order.id}>
                             <td><strong>#{order.id}</strong></td>
-                            <td>{new Date(order.orderDate).toLocaleDateString('vi-VN')}</td>
-                            <td style={{ maxWidth: 200, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                              {order.shippingAddress || '-'}
+                            <td>
+                              <div><strong>{order.customerName || '—'}</strong></div>
+                              <div><small className="text-muted">{order.customerPhone || ''}</small></div>
+                            </td>
+                            <td>
+                              <div>{new Date(order.orderDate).toLocaleDateString('vi-VN')}</div>
+                              <div><small className="text-muted">{new Date(order.orderDate).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}</small></div>
                             </td>
                             <td><strong>{order.totalAmount && order.totalAmount.toLocaleString('vi-VN')} đ</strong></td>
+                            <td>
+                              <span className={order.status === 'WaitingDeposit' ? 'text-warning font-weight-bold' : 'text-success'}>
+                                {order.depositAmount && order.depositAmount.toLocaleString('vi-VN')} đ
+                              </span>
+                            </td>
                             <td><span className={'badge ' + st.badge}>{st.label}</span></td>
                             <td>
-                              <button className="btn btn-sm btn-outline-primary mr-1" onClick={() => openDetail(order)} title="Xem chi tiet">
+                              <button className="btn btn-sm btn-outline-primary mr-1" onClick={() => openDetail(order)} title="Xem chi tiết">
                                 <i className="fas fa-eye"></i>
                               </button>
-                              {order.status === 'Pending' && (
-                                <button className="btn btn-sm btn-info mr-1" onClick={() => handleUpdateStatus(order.id, 'Shipping')} disabled={updating} title="Giao hang">
-                                  <i className="fas fa-truck"></i>
-                                </button>
-                              )}
-                              {order.status === 'Shipping' && (
-                                <button className="btn btn-sm btn-success mr-1" onClick={() => handleUpdateStatus(order.id, 'Completed')} disabled={updating} title="Da giao">
-                                  <i className="fas fa-check"></i>
-                                </button>
-                              )}
-                              {(order.status === 'Pending' || order.status === 'Shipping') && (
-                                <button className="btn btn-sm btn-danger" onClick={() => handleCancel(order.id)} disabled={updating} title="Huy don">
+                              <select
+                                className="form-control form-control-sm d-inline-block mr-1"
+                                value={order.status}
+                                onChange={e => handleUpdateStatus(order.id, e.target.value)}
+                                disabled={updating || order.status === 'Completed' || order.status === 'Cancelled'}
+                                style={{ width: 140, verticalAlign: 'middle' }}
+                              >
+                                {STATUS_LIST.map(s => (
+                                  <option key={s.value} value={s.value}>{s.label}</option>
+                                ))}
+                              </select>
+                              {['WaitingDeposit', 'DepositPaid', 'Processing'].includes(order.status) && (
+                                <button className="btn btn-sm btn-danger" onClick={() => handleCancel(order.id)} disabled={updating} title="Hủy đơn">
                                   <i className="fas fa-times"></i>
                                 </button>
                               )}
@@ -334,19 +440,61 @@ export default function Orders() {
                     <div className="text-center py-4"><div className="spinner-border text-primary" role="status"></div></div>
                   ) : (
                     <>
+                      {/* Thông tin khách hàng */}
                       <div className="row mb-3">
                         <div className="col-md-6">
-                          <p><strong>Ngày đặt:</strong> {new Date(selected.orderDate).toLocaleString('vi-VN')}</p>
-                          <p><strong>Địa chỉ:</strong> {selected.shippingAddress || '-'}</p>
+                          <table className="table table-sm table-borderless mb-0">
+                            <tbody>
+                              <tr>
+                                <td className="text-muted pl-0" style={{ width: 110 }}>👤 Khách hàng</td>
+                                <td><strong>{(detail?.order || selected).customerName || '—'}</strong></td>
+                              </tr>
+                              <tr>
+                                <td className="text-muted pl-0">📞 Số điện thoại</td>
+                                <td>
+                                  <strong>{(detail?.order || selected).customerPhone || '—'}</strong>
+                                  {(detail?.order || selected).customerPhone && (
+                                    <a href={'tel:' + (detail?.order || selected).customerPhone} className="btn btn-sm btn-outline-success ml-2 py-0 px-1">
+                                      <i className="fas fa-phone"></i>
+                                    </a>
+                                  )}
+                                </td>
+                              </tr>
+                              <tr>
+                                <td className="text-muted pl-0">🏠 Địa chỉ giao</td>
+                                <td>{(detail?.order || selected).shippingAddress || '—'}</td>
+                              </tr>
+                              <tr>
+                                <td className="text-muted pl-0">📅 Ngày đặt</td>
+                                <td>{new Date(selected.orderDate).toLocaleString('vi-VN')}</td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
-                        <div className="col-md-6 text-right">
-                          <p><strong>Tổng tiền:</strong> {selected.totalAmount && selected.totalAmount.toLocaleString('vi-VN')} đ</p>
+                        <div className="col-md-6">
+                          <div className="card border-0 bg-light">
+                            <div className="card-body py-2">
+                              <div className="d-flex justify-content-between mb-1">
+                                <span className="text-muted">Tổng đơn hàng:</span>
+                                <strong>{selected.totalAmount && selected.totalAmount.toLocaleString('vi-VN')} đ</strong>
+                              </div>
+                              <div className="d-flex justify-content-between mb-1">
+                                <span className="text-warning">Đặt cọc (50%):</span>
+                                <strong className="text-warning">{selected.depositAmount && selected.depositAmount.toLocaleString('vi-VN')} đ</strong>
+                              </div>
+                              <div className="d-flex justify-content-between">
+                                <span className="text-muted">Còn lại khi nhận:</span>
+                                <span>{((selected.totalAmount || 0) - (selected.depositAmount || 0)).toLocaleString('vi-VN')} đ</span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <table className="table table-bordered table-sm">
                         <thead className="thead-light">
                           <tr>
                             <th>Sản phẩm</th>
+                            <th className="text-center">Giới tính</th>
                             <th className="text-center">SL</th>
                             <th className="text-right">Đơn giá</th>
                             <th className="text-right">Thành tiền</th>
@@ -355,7 +503,14 @@ export default function Orders() {
                         <tbody>
                           {((detail && detail.details) || (detail && detail.orderDetails) || []).map((item, i) => (
                             <tr key={i}>
-                              <td>{(item.product && item.product.name) || item.productName || ('Product #' + item.productId)}</td>
+                              <td>{(item.product && item.product.name) || item.productName || ('Sản phẩm #' + item.productId)}</td>
+                              <td className="text-center">
+                                {item.selectedGender ? (
+                                  <span className={'badge ' + (item.selectedGender === 'Đực' ? 'badge-primary' : item.selectedGender === 'Cái' ? 'badge-danger' : 'badge-success')}>
+                                    {item.selectedGender === 'Cặp' ? '🐟 Cặp đôi' : `Con ${item.selectedGender}`}
+                                  </span>
+                                ) : '—'}
+                              </td>
                               <td className="text-center">{item.quantity}</td>
                               <td className="text-right">{item.unitPrice && item.unitPrice.toLocaleString('vi-VN')} đ</td>
                               <td className="text-right">{item.unitPrice && (item.unitPrice * item.quantity).toLocaleString('vi-VN')} đ</td>
@@ -364,35 +519,52 @@ export default function Orders() {
                         </tbody>
                         <tfoot>
                           <tr>
-                            <td colSpan={3} className="text-right"><strong>Tổng cộng:</strong></td>
+                            <td colSpan={4} className="text-right">Tổng đơn hàng:</td>
                             <td className="text-right"><strong>{selected.totalAmount && selected.totalAmount.toLocaleString('vi-VN')} đ</strong></td>
+                          </tr>
+                          <tr>
+                            <td colSpan={4} className="text-right text-warning">Đặt cọc (50%):</td>
+                            <td className="text-right text-warning"><strong>{selected.depositAmount && selected.depositAmount.toLocaleString('vi-VN')} đ</strong></td>
                           </tr>
                         </tfoot>
                       </table>
+
+                      {/* Cập nhật trạng thái */}
                       <div className="mt-3">
                         <strong>Cập nhật trạng thái:</strong>
-                        <div className="btn-group ml-3">
-                          {STATUS_LIST.map(s => (
-                            <button
-                              key={s.value}
-                              className={'btn btn-sm ' + (selected.status === s.value ? s.badge.replace('badge', 'btn') : 'btn-outline-secondary')}
-                              onClick={() => handleUpdateStatus(selected.id, s.value)}
-                              disabled={updating || selected.status === s.value || selected.status === 'Cancelled'}
-                            >
-                              {s.label}
-                            </button>
-                          ))}
+                        <div className="mt-2 d-flex align-items-center flex-wrap" style={{ gap: 8 }}>
+                          {['Completed', 'Cancelled'].includes(selected.status) ? (
+                            <span className="text-muted small">
+                              <i className="fas fa-lock mr-1"></i>
+                              Đơn hàng đã {selected.status === 'Completed' ? 'hoàn thành' : 'bị hủy'}, không thể thay đổi
+                            </span>
+                          ) : (
+                            <>
+                              <select
+                                className="form-control form-control-sm"
+                                value={selected.status}
+                                onChange={e => handleUpdateStatus(selected.id, e.target.value)}
+                                disabled={updating}
+                                style={{ width: 200 }}
+                              >
+                                {STATUS_LIST.map(s => (
+                                  <option key={s.value} value={s.value}>{s.label}</option>
+                                ))}
+                              </select>
+                              {['WaitingDeposit', 'DepositPaid', 'Processing'].includes(selected.status) && (
+                                <button className="btn btn-sm btn-danger" onClick={() => handleCancel(selected.id)} disabled={updating}>
+                                  <i className="fas fa-times mr-1"></i> Hủy đơn
+                                </button>
+                              )}
+                              {updating && <div className="spinner-border spinner-border-sm text-primary" role="status"></div>}
+                            </>
+                          )}
                         </div>
                       </div>
                     </>
                   )}
                 </div>
                 <div className="modal-footer">
-                  {(selected.status === 'Pending' || selected.status === 'Shipping') && (
-                    <button className="btn btn-danger" onClick={() => handleCancel(selected.id)} disabled={updating}>
-                      <i className="fas fa-times mr-1"></i> Hủy đơn
-                    </button>
-                  )}
                   <button className="btn btn-secondary" onClick={() => setShowDetail(false)}>Đóng</button>
                 </div>
               </div>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Cong_Nghe_Web\\BaseCore.Libs\\BaseCore.Libs.csproj": {}
+    "D:\\ThucTapNhom\\BaseCore.Libs\\BaseCore.Libs.csproj": {}
   },
   "projects": {
-    "D:\\Cong_Nghe_Web\\BaseCore.Common\\BaseCore.Common.csproj": {
+    "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Cong_Nghe_Web\\BaseCore.Common\\BaseCore.Common.csproj",
+        "projectUniqueName": "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj",
         "projectName": "BaseCore.Common",
-        "projectPath": "D:\\Cong_Nghe_Web\\BaseCore.Common\\BaseCore.Common.csproj",
+        "projectPath": "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj",
         "packagesPath": "C:\\Users\\Bangg\\.nuget\\packages\\",
-        "outputPath": "D:\\Cong_Nghe_Web\\BaseCore.Common\\obj\\",
+        "outputPath": "D:\\ThucTapNhom\\BaseCore.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,14 +97,14 @@
         }
       }
     },
-    "D:\\Cong_Nghe_Web\\BaseCore.DTO\\BaseCore.DTO.csproj": {
+    "D:\\ThucTapNhom\\BaseCore.DTO\\BaseCore.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Cong_Nghe_Web\\BaseCore.DTO\\BaseCore.DTO.csproj",
+        "projectUniqueName": "D:\\ThucTapNhom\\BaseCore.DTO\\BaseCore.DTO.csproj",
         "projectName": "BaseCore.DTO",
-        "projectPath": "D:\\Cong_Nghe_Web\\BaseCore.DTO\\BaseCore.DTO.csproj",
+        "projectPath": "D:\\ThucTapNhom\\BaseCore.DTO\\BaseCore.DTO.csproj",
         "packagesPath": "C:\\Users\\Bangg\\.nuget\\packages\\",
-        "outputPath": "D:\\Cong_Nghe_Web\\BaseCore.DTO\\obj\\",
+        "outputPath": "D:\\ThucTapNhom\\BaseCore.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -170,14 +170,14 @@
         }
       }
     },
-    "D:\\Cong_Nghe_Web\\BaseCore.Entities\\BaseCore.Entities.csproj": {
+    "D:\\ThucTapNhom\\BaseCore.Entities\\BaseCore.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Cong_Nghe_Web\\BaseCore.Entities\\BaseCore.Entities.csproj",
+        "projectUniqueName": "D:\\ThucTapNhom\\BaseCore.Entities\\BaseCore.Entities.csproj",
         "projectName": "BaseCore.Entities",
-        "projectPath": "D:\\Cong_Nghe_Web\\BaseCore.Entities\\BaseCore.Entities.csproj",
+        "projectPath": "D:\\ThucTapNhom\\BaseCore.Entities\\BaseCore.Entities.csproj",
         "packagesPath": "C:\\Users\\Bangg\\.nuget\\packages\\",
-        "outputPath": "D:\\Cong_Nghe_Web\\BaseCore.Entities\\obj\\",
+        "outputPath": "D:\\ThucTapNhom\\BaseCore.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -199,11 +199,11 @@
             "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Cong_Nghe_Web\\BaseCore.Common\\BaseCore.Common.csproj": {
-                "projectPath": "D:\\Cong_Nghe_Web\\BaseCore.Common\\BaseCore.Common.csproj"
+              "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj"
               },
-              "D:\\Cong_Nghe_Web\\BaseCore.DTO\\BaseCore.DTO.csproj": {
-                "projectPath": "D:\\Cong_Nghe_Web\\BaseCore.DTO\\BaseCore.DTO.csproj"
+              "D:\\ThucTapNhom\\BaseCore.DTO\\BaseCore.DTO.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.DTO\\BaseCore.DTO.csproj"
               }
             }
           }
@@ -250,14 +250,14 @@
         }
       }
     },
-    "D:\\Cong_Nghe_Web\\BaseCore.Libs\\BaseCore.Libs.csproj": {
+    "D:\\ThucTapNhom\\BaseCore.Libs\\BaseCore.Libs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Cong_Nghe_Web\\BaseCore.Libs\\BaseCore.Libs.csproj",
+        "projectUniqueName": "D:\\ThucTapNhom\\BaseCore.Libs\\BaseCore.Libs.csproj",
         "projectName": "BaseCore.Libs",
-        "projectPath": "D:\\Cong_Nghe_Web\\BaseCore.Libs\\BaseCore.Libs.csproj",
+        "projectPath": "D:\\ThucTapNhom\\BaseCore.Libs\\BaseCore.Libs.csproj",
         "packagesPath": "C:\\Users\\Bangg\\.nuget\\packages\\",
-        "outputPath": "D:\\Cong_Nghe_Web\\BaseCore.Libs\\obj\\",
+        "outputPath": "D:\\ThucTapNhom\\BaseCore.Libs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -279,11 +279,11 @@
             "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Cong_Nghe_Web\\BaseCore.Common\\BaseCore.Common.csproj": {
-                "projectPath": "D:\\Cong_Nghe_Web\\BaseCore.Common\\BaseCore.Common.csproj"
+              "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj"
               },
-              "D:\\Cong_Nghe_Web\\BaseCore.Entities\\BaseCore.Entities.csproj": {
-                "projectPath": "D:\\Cong_Nghe_Web\\BaseCore.Entities\\BaseCore.Entities.csproj"
+              "D:\\ThucTapNhom\\BaseCore.Entities\\BaseCore.Entities.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.Entities\\BaseCore.Entities.csproj"
               }
             }
           }

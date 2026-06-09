@@ -4,9 +4,11 @@ import { useAuth } from '../context/AuthContext'
 import { orderService } from '../services/order/orderService'
 import styles from './Payment.module.css'
 
-const BANK_ID = 'MB'
-const ACCOUNT_NO = '0827027392472'
+const VNPAY_LOGO = 'https://sandbox.vnpayment.vn/apis/assets/images/logo_vnpay.png'
+
+const ACCOUNT_NO   = '0827027392472'
 const ACCOUNT_NAME = 'SHOP CA CANH'
+const BANK_NAME    = 'MBBank (Ngân hàng Quân đội)'
 
 function formatPrice(n) {
   return Number(n || 0).toLocaleString('vi-VN') + 'đ'
@@ -21,78 +23,86 @@ function formatCountdown(ms) {
 }
 
 const STATUS_LABELS = {
-  WaitingDeposit: { text: 'Chờ đặt cọc',     color: '#e65100', bg: '#fff3e0' },
-  DepositPaid:    { text: 'Đã đặt cọc',       color: '#1565c0', bg: '#e3f2fd' },
-  Processing:     { text: 'Đang xử lý',       color: '#6a1b9a', bg: '#f3e5f5' },
-  Shipping:       { text: 'Đang giao hàng',   color: '#00695c', bg: '#e0f2f1' },
-  Completed:      { text: 'Hoàn thành',       color: '#2e7d32', bg: '#e8f5e9' },
-  Cancelled:      { text: 'Đã hủy',           color: '#c62828', bg: '#ffebee' },
+  WaitingDeposit: { text: 'Chờ đặt cọc',   color: '#e65100', bg: '#fff3e0' },
+  DepositPaid:    { text: 'Đã đặt cọc',     color: '#1565c0', bg: '#e3f2fd' },
+  Processing:     { text: 'Đang xử lý',     color: '#6a1b9a', bg: '#f3e5f5' },
+  Shipping:       { text: 'Đang giao hàng', color: '#00695c', bg: '#e0f2f1' },
+  Completed:      { text: 'Hoàn thành',     color: '#2e7d32', bg: '#e8f5e9' },
+  Cancelled:      { text: 'Đã hủy',         color: '#c62828', bg: '#ffebee' },
 }
 
 export default function Payment() {
-  const { orderId } = useParams()
-  const navigate = useNavigate()
-  const location = useLocation()
+  const { orderId }  = useParams()
+  const navigate     = useNavigate()
+  const location     = useLocation()
   const { user, loading: authLoading } = useAuth()
 
-  const initialData = location.state?.order || null
-  const [order, setOrder] = useState(null)
+  const initialData  = location.state?.order || null
+  const [order, setOrder]             = useState(null)
   const [pageLoading, setPageLoading] = useState(true)
-  const [qrError, setQrError] = useState(false)
-  const [timeLeft, setTimeLeft] = useState(null)
-  const [cancelTimeLeft, setCancelTimeLeft] = useState(null)
-  const [copied, setCopied] = useState(null)
-  const [status, setStatus] = useState(initialData?.status || 'WaitingDeposit')
-  const [cancelling, setCancelling] = useState(false)
+  const [timeLeft, setTimeLeft]       = useState(null)  // 24h countdown
+  const [copied, setCopied]           = useState(null)
+  const [status, setStatus]           = useState(initialData?.status || 'WaitingDeposit')
+  const [cancelling, setCancelling]   = useState(false)
   const [cancelError, setCancelError] = useState(null)
+  const [vnpayLoading, setVnpayLoading] = useState(false)
+  const [vnpayError, setVnpayError]     = useState(null)
 
-  const depositAmount = order?.depositAmount ?? initialData?.depositAmount ?? 0
-  const totalAmount = order?.totalAmount ?? initialData?.totalAmount ?? 0
-  const paymentRef = `COC DON ${orderId}`
-  const qrAmount = Math.round(depositAmount)
-  const qrUrl = `https://img.vietqr.io/image/${BANK_ID}-${ACCOUNT_NO}-compact2.jpg` +
-    `?amount=${qrAmount}&addInfo=${encodeURIComponent(paymentRef)}&accountName=${encodeURIComponent(ACCOUNT_NAME)}`
+  /* Giá trị hiển thị — ưu tiên order đã fetch, fallback initialData */
+  const depositAmount  = order?.depositAmount  ?? initialData?.depositAmount  ?? 0
+  const totalAmount    = order?.totalAmount    ?? initialData?.totalAmount    ?? 0
+  const customerName   = order?.customerName   ?? initialData?.customerName   ?? ''
+  const customerPhone  = order?.customerPhone  ?? initialData?.customerPhone  ?? ''
+  const shippingAddr   = order?.shippingAddress ?? ''
+  const paymentRef     = `COC DON ${orderId}`
 
-  // Wait for auth to load, then fetch order
+  /* ─── Fetch đơn hàng sau khi auth xong ─── */
   useEffect(() => {
     if (authLoading) return
-    if (!user) {
-      navigate('/login', { replace: true })
-      return
-    }
+    if (!user) { navigate('/login', { replace: true }); return }
+
     orderService.getById(orderId)
       .then(data => {
         const o = data.order || data
         setOrder(o)
         setStatus(o.status)
       })
-      .catch(() => navigate('/orders', { replace: true }))
+      .catch(() => {
+        // Nếu CÓ dữ liệu từ checkout state → không redirect, vẫn hiển thị trang
+        // Nếu KHÔNG có gì (user vào thẳng URL) → mới redirect về /orders
+        if (!initialData) {
+          navigate('/orders', { replace: true })
+        }
+        // Khi initialData có, component dùng fallback data để hiển thị
+      })
       .finally(() => setPageLoading(false))
   }, [orderId, user, authLoading])
 
-  // Countdown: 24h từ ngày đặt
+  /* ─── Đếm ngược 24h để thanh toán ─── */
   useEffect(() => {
-    const orderDate = order?.orderDate
-    if (!orderDate) return
-    const deadline = new Date(orderDate).getTime() + 24 * 60 * 60 * 1000
-    const tick = () => setTimeLeft(deadline - Date.now())
+    const d = order?.orderDate
+    if (!d) return
+    const deadline = new Date(d).getTime() + 24 * 3600 * 1000
+    const tick = () => {
+      const remaining = deadline - Date.now()
+      setTimeLeft(remaining)
+      // Nếu quá 24h, auto refresh để check auto-cancel
+      if (remaining <= 0) {
+        orderService.getById(orderId)
+          .then(data => {
+            const o = data.order || data
+            setStatus(o.status)
+            setOrder(o)
+          })
+          .catch(() => {})
+      }
+    }
     tick()
     const id = setInterval(tick, 1000)
     return () => clearInterval(id)
   }, [order?.orderDate])
 
-  // Countdown: 3h để hủy đơn
-  useEffect(() => {
-    const orderDate = order?.orderDate
-    if (!orderDate) return
-    const cancelDeadline = new Date(orderDate).getTime() + 3 * 60 * 60 * 1000
-    const tick = () => setCancelTimeLeft(cancelDeadline - Date.now())
-    tick()
-    const id = setInterval(tick, 1000)
-    return () => clearInterval(id)
-  }, [order?.orderDate])
-
-  // Poll trạng thái mỗi 5 giây khi đang chờ
+  /* ─── Poll trạng thái mỗi 5 giây khi chờ ─── */
   useEffect(() => {
     if (status !== 'WaitingDeposit') return
     const id = setInterval(() => {
@@ -101,9 +111,10 @@ export default function Payment() {
           const o = data.order || data
           const s = o.status
           setStatus(s)
+          setOrder(o)
           if (s !== 'WaitingDeposit') clearInterval(id)
         })
-        .catch(() => {})
+        .catch(() => { /* tiếp tục poll, bỏ qua lỗi tạm thời */ })
     }, 5000)
     return () => clearInterval(id)
   }, [orderId, status])
@@ -114,8 +125,20 @@ export default function Payment() {
     setTimeout(() => setCopied(null), 2000)
   }
 
+  const handleVnpayPayment = async () => {
+    try {
+      setVnpayLoading(true)
+      setVnpayError(null)
+      const data = await orderService.createVnpayUrl(orderId)
+      window.location.href = data.paymentUrl
+    } catch (err) {
+      setVnpayError(err.message || 'Không thể tạo liên kết VNPay')
+      setVnpayLoading(false)
+    }
+  }
+
   const handleCancel = async () => {
-    if (!window.confirm('Bạn có chắc chắn muốn hủy đơn hàng này không?')) return
+    if (!window.confirm('Bạn có chắc muốn hủy đơn hàng này?')) return
     try {
       setCancelling(true)
       setCancelError(null)
@@ -139,9 +162,9 @@ export default function Payment() {
     )
   }
 
-  const isExpired = timeLeft !== null && timeLeft <= 0
-  const canCancel = status === 'WaitingDeposit' && cancelTimeLeft !== null && cancelTimeLeft > 0
-  const isPaid = ['DepositPaid', 'Processing', 'Shipping', 'Completed'].includes(status)
+  const isExpired  = timeLeft !== null && timeLeft <= 0
+  const canCancel  = status === 'WaitingDeposit' && timeLeft !== null && timeLeft > 0
+  const isPaid     = ['DepositPaid', 'Processing', 'Shipping', 'Completed'].includes(status)
   const isCancelled = status === 'Cancelled'
   const statusInfo = STATUS_LABELS[status] || { text: status, color: '#555', bg: '#f5f5f5' }
 
@@ -156,9 +179,9 @@ export default function Payment() {
           <span>Thanh toán đơn #{orderId}</span>
         </div>
 
-        <h1 className={styles.pageTitle}>Thanh toán đặt cọc</h1>
+        <h1 className={styles.pageTitle}>💳 Thanh toán đặt cọc</h1>
 
-        {/* Banner thanh toán thành công */}
+        {/* Banner thành công */}
         {isPaid && (
           <div className={styles.successBanner}>
             <div className={styles.bannerIcon}>✓</div>
@@ -187,13 +210,14 @@ export default function Payment() {
           </div>
         )}
 
-        {cancelError && (
-          <div className={styles.errorAlert}>{cancelError}</div>
-        )}
+        {cancelError && <div className={styles.errorAlert}>{cancelError}</div>}
 
         <div className={styles.layout}>
-          {/* QR Card */}
+
+          {/* ═══ CỘT TRÁI: QR & Số tiền ═══ */}
           <div className={styles.qrCard}>
+
+            {/* Header ngân hàng */}
             <div className={styles.qrCardHeader}>
               <div className={styles.bankBadge}>MB</div>
               <div>
@@ -202,56 +226,85 @@ export default function Payment() {
               </div>
             </div>
 
+            {/* ẢNH QR CỦA SHOP */}
             <div className={styles.qrWrapper}>
-              {!qrError ? (
-                <img
-                  src={qrUrl}
-                  alt="QR Code chuyển khoản"
-                  className={styles.qrImage}
-                  onError={() => setQrError(true)}
-                />
-              ) : (
-                <div className={styles.qrFallback}>
-                  <div className={styles.qrFallbackIcon}>📱</div>
-                  <p>Không thể tải mã QR</p>
-                  <small>Vui lòng chuyển khoản thủ công theo thông tin bên dưới</small>
-                </div>
-              )}
+              <img
+                src="/qr-ngan-hang.jpg"
+                alt="Mã QR chuyển khoản ngân hàng"
+                className={styles.qrImage}
+              />
             </div>
 
-            {!qrError && (
-              <div className={styles.qrInstruction}>
-                Mở app ngân hàng bất kỳ → Quét mã QR
+            <p className={styles.qrInstruction}>
+              📱 Mở app ngân hàng → Quét QR → Nhập <strong>số tiền</strong> &amp; <strong>nội dung</strong> bên dưới
+            </p>
+
+            {/* Số tiền nổi bật */}
+            <div className={styles.amountBig}>
+              <div className={styles.amountLabel}>💰 Số tiền cần chuyển</div>
+              <div className={styles.amountNum}>{formatPrice(depositAmount)}</div>
+              <div className={styles.amountSub}>Đặt cọc 50% · Còn lại thanh toán khi nhận</div>
+            </div>
+
+            {/* Nội dung chuyển khoản nổi bật */}
+            <div className={styles.refBox}>
+              <div className={styles.refLabel}>📝 Nội dung chuyển khoản</div>
+              <div className={styles.refValue}>{paymentRef}</div>
+              <button
+                className={`${styles.copyBtn} ${copied === 'ref' ? styles.copied : ''}`}
+                onClick={() => copy(paymentRef, 'ref')}
+              >
+                {copied === 'ref' ? '✓ Đã copy' : '📋 Copy nội dung'}
+              </button>
+            </div>
+
+            {/* Thanh toán VNPay */}
+            {status === 'WaitingDeposit' && !isExpired && (
+              <div className={styles.vnpaySection}>
+                <div className={styles.vnpayOrDivider}>— hoặc đặt cọc nhanh qua —</div>
+                {vnpayError && <div className={styles.vnpayError}>{vnpayError}</div>}
+                <button
+                  className={styles.vnpayBtn}
+                  onClick={handleVnpayPayment}
+                  disabled={vnpayLoading}
+                >
+                  {vnpayLoading ? (
+                    <span>Đang chuyển hướng...</span>
+                  ) : (
+                    <>
+                      <img src="https://vnpay.vn/s1/statics/img/logo-vi.png"
+                        alt="VNPay" className={styles.vnpayLogo}
+                        onError={e => { e.target.style.display='none' }} />
+                      Thanh toán qua VNPay
+                    </>
+                  )}
+                </button>
+                <p className={styles.vnpayNote}>
+                  Hỗ trợ: ATM, Visa/Master, Internet Banking, Ví điện tử
+                </p>
               </div>
             )}
 
-            <div className={styles.amountBig}>
-              <div className={styles.amountLabel}>Số tiền cần chuyển</div>
-              <div className={styles.amountNum}>{formatPrice(depositAmount)}</div>
-              <div className={styles.amountSub}>50% giá trị đơn hàng</div>
-            </div>
           </div>
 
-          {/* Info Card */}
+          {/* ═══ CỘT PHẢI: Thông tin & Trạng thái ═══ */}
           <div className={styles.infoCard}>
-            {/* Trạng thái */}
+
+            {/* Trạng thái đơn */}
             <div className={styles.statusRow}>
               <span className={styles.statusLabel}>Trạng thái đơn hàng:</span>
-              <span
-                className={styles.statusBadge}
-                style={{ color: statusInfo.color, background: statusInfo.bg }}
-              >
+              <span className={styles.statusBadge} style={{ color: statusInfo.color, background: statusInfo.bg }}>
                 {statusInfo.text}
               </span>
             </div>
 
             {/* Thông tin chuyển khoản */}
             <div className={styles.infoSection}>
-              <div className={styles.infoSectionTitle}>Thông tin chuyển khoản</div>
+              <div className={styles.infoSectionTitle}>🏦 Thông tin tài khoản nhận tiền</div>
 
               <div className={styles.infoRow}>
                 <span className={styles.infoKey}>Ngân hàng</span>
-                <span className={styles.infoVal}>MBBank</span>
+                <span className={styles.infoVal}>{BANK_NAME}</span>
               </div>
 
               <div className={styles.infoRow}>
@@ -262,7 +315,7 @@ export default function Payment() {
                     className={`${styles.copyBtn} ${copied === 'acct' ? styles.copied : ''}`}
                     onClick={() => copy(ACCOUNT_NO, 'acct')}
                   >
-                    {copied === 'acct' ? '✓ Đã copy' : 'Copy'}
+                    {copied === 'acct' ? '✓ Copied' : 'Copy'}
                   </button>
                 </div>
               </div>
@@ -282,10 +335,10 @@ export default function Payment() {
                 <div className={styles.copyGroup}>
                   <span className={`${styles.infoVal} ${styles.refVal}`}>{paymentRef}</span>
                   <button
-                    className={`${styles.copyBtn} ${copied === 'ref' ? styles.copied : ''}`}
-                    onClick={() => copy(paymentRef, 'ref')}
+                    className={`${styles.copyBtn} ${copied === 'ref2' ? styles.copied : ''}`}
+                    onClick={() => copy(paymentRef, 'ref2')}
                   >
-                    {copied === 'ref' ? '✓ Đã copy' : 'Copy'}
+                    {copied === 'ref2' ? '✓ Copied' : 'Copy'}
                   </button>
                 </div>
               </div>
@@ -293,7 +346,7 @@ export default function Payment() {
 
             {/* Tóm tắt đơn hàng */}
             <div className={styles.infoSection}>
-              <div className={styles.infoSectionTitle}>Tóm tắt đơn hàng #{orderId}</div>
+              <div className={styles.infoSectionTitle}>🧾 Tóm tắt đơn hàng #{orderId}</div>
               <div className={styles.infoRow}>
                 <span className={styles.infoKey}>Tổng đơn hàng</span>
                 <span className={styles.infoVal}>{formatPrice(totalAmount)}</span>
@@ -303,16 +356,41 @@ export default function Payment() {
                 <span className={`${styles.infoVal} ${styles.highlight}`}>{formatPrice(depositAmount)}</span>
               </div>
               <div className={styles.infoRow}>
-                <span className={styles.infoKey}>Thanh toán khi nhận hàng</span>
+                <span className={styles.infoKey}>Còn lại khi nhận hàng</span>
                 <span className={styles.infoVal}>{formatPrice(totalAmount - depositAmount)}</span>
               </div>
             </div>
+
+            {/* Thông tin giao hàng */}
+            {(customerName || customerPhone || shippingAddr) && (
+              <div className={styles.infoSection}>
+                <div className={styles.infoSectionTitle}>📦 Thông tin giao hàng</div>
+                {customerName && (
+                  <div className={styles.infoRow}>
+                    <span className={styles.infoKey}>Người nhận</span>
+                    <span className={styles.infoVal}>{customerName}</span>
+                  </div>
+                )}
+                {customerPhone && (
+                  <div className={styles.infoRow}>
+                    <span className={styles.infoKey}>Số điện thoại</span>
+                    <span className={styles.infoVal}>{customerPhone}</span>
+                  </div>
+                )}
+                {shippingAddr && (
+                  <div className={styles.infoRow}>
+                    <span className={styles.infoKey}>Địa chỉ</span>
+                    <span className={styles.infoVal} style={{ textAlign: 'right', maxWidth: '60%' }}>{shippingAddr}</span>
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* Đếm ngược 24h */}
             {!isPaid && !isCancelled && (
               <div className={`${styles.countdown} ${isExpired ? styles.countdownExpired : timeLeft !== null && timeLeft < 3600000 ? styles.countdownUrgent : ''}`}>
                 <div className={styles.countdownLabel}>
-                  {isExpired ? 'Đã hết thời gian đặt cọc' : 'Thời gian còn lại để đặt cọc'}
+                  {isExpired ? '⛔ Đã hết thời gian đặt cọc' : '⏳ Thời gian còn lại để đặt cọc'}
                 </div>
                 <div className={styles.countdownTimer}>{formatCountdown(timeLeft)}</div>
                 <div className={styles.countdownNote}>
@@ -324,50 +402,49 @@ export default function Payment() {
               </div>
             )}
 
-            {/* Polling indicator */}
+            {/* Đang chờ xác nhận */}
             {status === 'WaitingDeposit' && !isExpired && (
               <div className={styles.pollingRow}>
                 <div className={styles.pulsingDot} />
-                <span>Đang chờ xác nhận thanh toán từ admin...</span>
+                <span>Đang chờ admin xác nhận thanh toán... (tự động cập nhật)</span>
               </div>
             )}
 
-            {/* Hủy đơn trong 3h */}
+            {/* Hủy đơn - trong 24h chưa thanh toán */}
             {canCancel && (
               <div className={styles.cancelSection}>
                 <div className={styles.cancelInfo}>
-                  <span>Thời gian hủy còn lại: </span>
-                  <strong className={cancelTimeLeft < 900000 ? styles.urgentText : ''}>
-                    {formatCountdown(cancelTimeLeft)}
+                  <span>⏱️ Thời gian hủy đơn: </span>
+                  <strong className={timeLeft < 3600000 ? styles.urgentText : ''}>
+                    {formatCountdown(timeLeft)}
                   </strong>
                 </div>
-                <button
-                  className={styles.cancelBtn}
-                  onClick={handleCancel}
-                  disabled={cancelling}
-                >
-                  {cancelling ? 'Đang hủy...' : 'Hủy đơn hàng'}
+                <button className={styles.cancelBtn} onClick={handleCancel} disabled={cancelling}>
+                  {cancelling ? 'Đang hủy...' : '❌ Hủy đơn hàng'}
                 </button>
               </div>
             )}
 
-            {status === 'WaitingDeposit' && !canCancel && cancelTimeLeft !== null && cancelTimeLeft <= 0 && (
+            {/* Hủy hết hạn hoặc đã hủy */}
+            {!canCancel && status === 'WaitingDeposit' && (
               <div className={styles.cancelExpired}>
-                Đã quá 3 giờ — không thể hủy đơn hàng
+                {isExpired ? '⛔ Quá 24h — đơn hàng đã tự động hủy' : ''}
               </div>
             )}
 
             {/* Lưu ý */}
             <div className={styles.noteBox}>
-              <div className={styles.noteTitle}>Lưu ý quan trọng</div>
+              <div className={styles.noteTitle}>⚠️ Lưu ý quan trọng</div>
               <ul className={styles.noteList}>
-                <li>Nhập <strong>đúng nội dung</strong> chuyển khoản để đơn được xác nhận nhanh</li>
-                <li>Số tiền phải khớp chính xác: <strong>{formatPrice(depositAmount)}</strong></li>
-                <li>Admin xác nhận trong vòng vài phút sau khi nhận được</li>
+                <li>Nhập <strong>đúng nội dung</strong>: <code>{paymentRef}</code></li>
+                <li>Số tiền phải đúng: <strong>{formatPrice(depositAmount)}</strong></li>
+                <li>Admin xác nhận trong vài phút sau khi nhận chuyển khoản</li>
                 <li>Phần còn lại <strong>{formatPrice(totalAmount - depositAmount)}</strong> thanh toán khi nhận hàng</li>
-                <li>Chỉ có thể hủy đơn trong <strong>3 giờ</strong> đầu sau khi đặt</li>
+                <li>Bạn có thể <strong>hủy đơn bất cứ lúc nào trong 24h</strong> nếu chưa thanh toán</li>
+                <li>Sau <strong>24 giờ</strong> mà chưa thanh toán, đơn hàng sẽ <strong>tự động hủy</strong></li>
               </ul>
             </div>
+
           </div>
         </div>
       </div>

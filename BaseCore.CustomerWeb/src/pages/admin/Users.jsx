@@ -21,7 +21,7 @@ const Users = () => {
         email: '',
         phone: '',
         position: '',
-        userType: 0,
+        userType: 2,
         isActive: true,
     });
     const [error, setError] = useState('');
@@ -46,10 +46,11 @@ const Users = () => {
             let totalCountData = 0;
             
             if (response.data) {
-                // Response: { data: { data: [...], totalPages, totalCount } }
-                userData = response.data.data || [];
-                totalPagesData = response.data.totalPages || 0;
-                totalCountData = response.data.totalCount || 0;
+                // Backend trả về: { data: [...], totalPages, totalCount, ... }
+                // response.data = mảng user, KHÔNG phải nested object
+                userData = Array.isArray(response.data) ? response.data : (response.data.data || []);
+                totalPagesData = response.totalPages ?? response.data.totalPages ?? 0;
+                totalCountData = response.totalCount ?? response.data.totalCount ?? 0;
             } else if (response.items) {
                 // Response: { items: [...], totalPages, totalCount }
                 userData = response.items || [];
@@ -102,7 +103,7 @@ const Users = () => {
                 email: '',
                 phone: '',
                 position: '',
-                userType: 0,
+                userType: 2,
                 isActive: true,
             });
         }
@@ -157,13 +158,17 @@ const Users = () => {
     const getUserRoleLabel = (userType) => {
         const roles = {
             0: 'Người dùng',
-            1: 'Admin'
+            1: 'Admin',
+            2: 'Khách hàng',
+            3: 'Quản lý kho'
         };
-        return roles[userType] || 'Không xác định';
+        return roles[userType] ?? 'Không xác định';
     };
 
     const getUserRoleBadgeClass = (userType) => {
-        return userType === 1 ? 'badge-danger' : 'badge-info';
+        if (userType === 1) return 'badge-danger';
+        if (userType === 3) return 'badge-warning';
+        return 'badge-info';
     };
 
     const handleSubmit = async (e) => {
@@ -513,8 +518,9 @@ const Users = () => {
                                             value={formData.userType}
                                             onChange={(e) => setFormData({ ...formData, userType: e.target.value })}
                                         >
-                                            <option value="0">Người dùng</option>
+                                            <option value="2">Khách hàng</option>
                                             <option value="1">Admin</option>
+                                            <option value="3">Quản lý kho</option>
                                         </select>
                                     </div>
                                     {editingUser && (

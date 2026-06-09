@@ -462,30 +462,37 @@
   margin-bottom: 1rem;
 }
 
-/* QR Fallback */
-.qrFallback {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
-  color: #94a3b8;
+/* Nội dung chuyển khoản nổi bật */
+.refBox {
+  margin-top: 0.75rem;
+  background: linear-gradient(135deg, #fff7ed, #fef3c7);
+  border: 1.5px solid #fbbf24;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
   text-align: center;
-  gap: 0.5rem;
 }
 
-.qrFallbackIcon { font-size: 2.5rem; }
-
-.qrFallback p {
-  font-size: 14px;
-  font-weight: 500;
-  color: #64748b;
-  margin: 0;
+.refLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #92400e;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
 }
 
-.qrFallback small {
-  font-size: 12px;
-  color: #94a3b8;
+.refValue {
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  background: white;
+  border: 1px solid #fde68a;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.03em;
+  word-break: break-all;
 }
 
 /* Note box */
@@ -539,6 +546,69 @@
 @keyframes slideDown {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── VNPay Section ─── */
+.vnpaySection {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed #e0e0e0;
+  text-align: center;
+}
+
+.vnpayOrDivider {
+  color: #999;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.vnpayBtn {
+  width: 100%;
+  padding: 13px 20px;
+  background: linear-gradient(135deg, #005bac, #003f80);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all .2s;
+}
+
+.vnpayBtn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0069c9, #004d99);
+  box-shadow: 0 4px 16px rgba(0,91,172,.35);
+}
+
+.vnpayBtn:disabled {
+  opacity: .7;
+  cursor: not-allowed;
+}
+
+.vnpayLogo {
+  height: 22px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.vnpayNote {
+  font-size: 11px;
+  color: #999;
+  margin: 8px 0 0;
+}
+
+.vnpayError {
+  background: #ffebee;
+  color: #c62828;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 10px;
+  text-align: left;
 }
 
 @media (max-width: 768px) {
