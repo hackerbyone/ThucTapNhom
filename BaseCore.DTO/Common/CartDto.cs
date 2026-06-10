@@ -42,5 +42,6 @@ namespace BaseCore.DTO.Common
         public string PaymentMethod { get; set; } = "COD";
         public string CustomerName { get; set; } = "";
         public string CustomerPhone { get; set; } = "";
+        public decimal ShippingFee { get; set; } = 0;
     }
 }

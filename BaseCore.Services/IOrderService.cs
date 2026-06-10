@@ -10,6 +10,6 @@ namespace BaseCore.Services
         Task<Order> CreateOrderAsync(Order order);
         Task<List<Order>> GetOrdersByUserIdAsync(string userId);   // ✅ string
         Task<Order?> GetOrderByIdAsync(int id);
-        Task<OrderResultDto> CheckoutAsync(string userId, string shippingAddress); // ✅ string
+        Task<OrderResultDto> CheckoutAsync(string userId, string shippingAddress, string customerName = "", string customerPhone = "", decimal shippingFee = 0);
     }
 }

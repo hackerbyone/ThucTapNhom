@@ -8,6 +8,8 @@ namespace BaseCore.Entities
 
         public decimal Price { get; set; }
 
+        public decimal? PairPrice { get; set; }
+
         public int Stock { get; set; }
 
         public string? ImageUrl { get; set; }
