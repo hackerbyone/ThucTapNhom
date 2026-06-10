@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\BaseCore.ApiGateway.props" />
-</Project>

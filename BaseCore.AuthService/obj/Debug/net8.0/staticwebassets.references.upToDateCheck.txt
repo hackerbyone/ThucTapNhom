@@ -1,4 +1,0 @@
-D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json
-D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.APIService\obj\Debug\net8.0\staticwebassets.build.json
-D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.ApiGateway\obj\Debug\net8.0\staticwebassets.build.json
-D:\FWtest (1)\FWtest\FW\BaseCore\BaseCore.APIService\obj\Debug\net8.0\staticwebassets.build.json

@@ -48,7 +48,7 @@ namespace BaseCore.Services
                 .FirstOrDefaultAsync(o => o.Id == id);
         }
 
-        public async Task<OrderResultDto> CheckoutAsync(string userId, string shippingAddress)
+        public async Task<OrderResultDto> CheckoutAsync(string userId, string shippingAddress, string customerName = "", string customerPhone = "", decimal shippingFee = 0)
         {
             var cart = await _cartRepository.GetCartByUserId(userId);
             if (cart == null || !cart.Items.Any())
@@ -83,12 +83,16 @@ namespace BaseCore.Services
                 }
             }
 
-            decimal totalAmount = cart.Items.Sum(item =>
+            // 1 cặp = 2 con → giá nhân đôi
+            decimal productTotal = cart.Items.Sum(item =>
             {
                 var p = _context.Products.Local.FirstOrDefault(x => x.Id == item.ProductId);
-                return (p?.Price ?? 0) * item.Quantity;
+                decimal unitPrice = item.SelectedGender == "Cặp" ? (p?.PairPrice ?? (p?.Price ?? 0) * 2) : (p?.Price ?? 0);
+                return unitPrice * item.Quantity;
             });
 
+            // Cộng phí vận chuyển vào tổng cộng
+            decimal totalAmount = productTotal + shippingFee;
             decimal depositAmount = Math.Round(totalAmount * 0.5m, 0);
 
             var order = new Order
@@ -99,6 +103,8 @@ namespace BaseCore.Services
                 TotalAmount = totalAmount,
                 DepositAmount = depositAmount,
                 ShippingAddress = shippingAddress,
+                CustomerName = customerName,
+                CustomerPhone = customerPhone,
             };
 
             await _context.Orders.AddAsync(order);
@@ -111,12 +117,15 @@ namespace BaseCore.Services
                 var product = await _context.Products.FindAsync(item.ProductId);
                 if (product == null) continue;
 
+                // Cặp = 2 con → lưu UnitPrice là giá 1 cặp (= 2 × giá đơn)
+                decimal unitPrice = item.SelectedGender == "Cặp" ? (product.PairPrice ?? product.Price * 2) : product.Price;
+
                 await _context.Set<OrderDetail>().AddAsync(new OrderDetail
                 {
                     OrderId        = order.Id,
                     ProductId      = item.ProductId,
                     Quantity       = item.Quantity,
-                    UnitPrice      = product.Price,
+                    UnitPrice      = unitPrice,
                     SelectedGender = item.SelectedGender,
                 });
 
@@ -156,6 +165,8 @@ namespace BaseCore.Services
                 Id              = order.Id,
                 UserId          = order.UserId,
                 ShippingAddress = order.ShippingAddress,
+                CustomerName    = order.CustomerName,
+                CustomerPhone   = order.CustomerPhone,
                 TotalAmount     = totalAmount,
                 DepositAmount   = depositAmount,
                 Status          = order.Status,

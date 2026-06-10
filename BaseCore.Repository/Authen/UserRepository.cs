@@ -9,6 +9,7 @@ namespace BaseCore.Repository.Authen
     public interface IUserRepository
     {
         Task<User> GetByUsernameAsync(string username);
+        Task<User?> GetByEmailAsync(string email);
         Task<User> GetByIdAsync(string id);
         Task<List<User>> GetAllAsync();
         Task CreateAsync(User user);
@@ -30,6 +31,12 @@ namespace BaseCore.Repository.Authen
         {
             return await _context.Users
                 .FirstOrDefaultAsync(u => u.UserName == username && u.IsActive);
+        }
+
+        public async Task<User?> GetByEmailAsync(string email)
+        {
+            return await _context.Users
+                .FirstOrDefaultAsync(u => u.Email == email && u.IsActive);
         }
 
         public async Task<User> GetByIdAsync(string id)

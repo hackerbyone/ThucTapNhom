@@ -75,6 +75,7 @@ builder.Services.AddDbContext<MySqlDbContext>(options =>
 // DI for Authentication Services and Repositories only
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddHttpClient();
 
 // JWT Authentication Key
 var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:SecretKey"] ?? "YourSecretKeyForAuthenticationShouldBeLongEnough");

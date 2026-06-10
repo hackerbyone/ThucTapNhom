@@ -10,9 +10,11 @@ namespace BaseCore.Services.Authen
     public interface IUserService
     {
         Task<User> Authenticate(string username, string password);
+        Task<User?> GetByEmail(string email);
         Task<List<User>> GetAll();
         Task<User> GetById(string id);
         Task<User> Create(User user, string password);
+        Task<User> CreateGoogleUser(User user);
         Task Update(User user, string password = null);
         Task Delete(string id);
         Task<(List<User> Users, int TotalCount)> Search(string keyword, int page, int pageSize);
@@ -25,6 +27,25 @@ namespace BaseCore.Services.Authen
         public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
+        }
+
+        public async Task<User?> GetByEmail(string email)
+        {
+            return await _userRepository.GetByEmailAsync(email);
+        }
+
+        public async Task<User> CreateGoogleUser(User user)
+        {
+            // Tạo password ngẫu nhiên (user không dùng password để login)
+            byte[] salt;
+            user.Password = TokenHelper.HashPassword(Guid.NewGuid().ToString(), out salt);
+            user.Salt     = salt;
+            if (string.IsNullOrWhiteSpace(user.Id))
+                user.Id = Guid.NewGuid().ToString();
+            user.Created  = DateTime.Now;
+            user.IsActive = true;
+            await _userRepository.CreateAsync(user);
+            return user;
         }
 
         public async Task<User> Authenticate(string username, string password)
