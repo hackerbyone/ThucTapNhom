@@ -45,7 +45,7 @@ namespace BaseCore.APIService.Controllers
 
         private static object ToDto(Product p, double rating, int reviews) => new
         {
-            p.Id, p.Name, p.Price, p.Stock,
+            p.Id, p.Name, p.Price, p.PairPrice, p.Stock,
             p.ImageUrl, p.Description, p.CareInstructions, p.Environment,
             p.MaleStock, p.FemaleStock, p.CategoryId,
             rating, reviews
@@ -142,6 +142,7 @@ namespace BaseCore.APIService.Controllers
             {
                 Name = dto.Name,
                 Price = dto.Price,
+                PairPrice = dto.PairPrice,
                 Stock = finalStock,
                 CategoryId = dto.CategoryId,
                 Description = dto.Description,
@@ -153,6 +154,12 @@ namespace BaseCore.APIService.Controllers
             };
 
             await _productRepository.AddAsync(product);
+
+            if (product.CategoryId == 1 || product.CategoryId == 2)
+                await UpsertTank(product);
+            else if (product.CategoryId == 3 || product.CategoryId == 4 || product.CategoryId == 5)
+                await UpsertAccessoryEntry(product);
+
             return CreatedAtAction(nameof(GetById), new { id = product.Id }, product);
         }
 
@@ -190,6 +197,7 @@ namespace BaseCore.APIService.Controllers
 
             product.Name = dto.Name ?? product.Name;
             product.Price = dto.Price ?? product.Price;
+            product.PairPrice = dto.PairPrice ?? product.PairPrice;
             product.CategoryId = dto.CategoryId ?? product.CategoryId;
             product.Description = dto.Description ?? product.Description;
             product.CareInstructions = dto.CareInstructions ?? product.CareInstructions;
@@ -201,6 +209,12 @@ namespace BaseCore.APIService.Controllers
             product.Stock = isGenderProduct ? newMaleStock + newFemaleStock : targetStock;
 
             await _productRepository.UpdateAsync(product);
+
+            if (product.CategoryId == 1 || product.CategoryId == 2)
+                await UpsertTank(product);
+            else if (product.CategoryId == 3 || product.CategoryId == 4 || product.CategoryId == 5)
+                await UpsertAccessoryEntry(product);
+
             return Ok(product);
         }
 
@@ -231,6 +245,89 @@ namespace BaseCore.APIService.Controllers
             }).ToList();
             return Ok(result);
         }
+
+        // Tạo hoặc cập nhật phụ kiện/thiết bị tương ứng với sản phẩm (category 3, 4)
+        private async Task UpsertAccessoryEntry(Product product)
+        {
+            var name = product.Name ?? $"Sản phẩm #{product.Id}";
+            var type = product.CategoryId == 3 ? "Equipment" : "Accessory";
+            var acc  = await _context.Accessories
+                .FirstOrDefaultAsync(a => a.ProductId == product.Id && a.IsActive);
+
+            if (acc == null)
+            {
+                _context.Accessories.Add(new BaseCore.Entities.Accessory
+                {
+                    ProductId     = product.Id,
+                    Name          = name,
+                    Type          = type,
+                    Quantity      = product.Stock,
+                    Status        = "Good",
+                    IsActive      = true,
+                    Created       = DateTime.Now,
+                    CreatedBy     = "system",
+                    CreatedByName = "Hệ thống (auto)"
+                });
+            }
+            else
+            {
+                acc.Name     = name;
+                acc.Quantity = product.Stock;
+                acc.Modified = DateTime.Now;
+            }
+            await _context.SaveChangesAsync();
+        }
+
+        // Tạo hoặc cập nhật bể kho tương ứng với sản phẩm cá
+        private async Task UpsertTank(Product product)
+        {
+            int male, female;
+            string? notes = null;
+
+            if (product.MaleStock > 0 || product.FemaleStock > 0)
+            {
+                male   = product.MaleStock;
+                female = product.FemaleStock;
+            }
+            else
+            {
+                // Chưa phân loại giới tính → đặt hết vào MaleCount để TotalCount = Stock
+                male   = product.Stock;
+                female = 0;
+                notes  = "Chưa phân loại giới tính";
+            }
+
+            var tankName = product.Name ?? $"Loài #{product.Id}";
+            var tank = await _context.TankFishTrackings
+                .FirstOrDefaultAsync(t => t.ProductId == product.Id);
+
+            if (tank == null)
+            {
+                _context.TankFishTrackings.Add(new TankFishTracking
+                {
+                    TankName          = tankName,
+                    ProductId         = product.Id,
+                    MaleCount         = male,
+                    FemaleCount       = female,
+                    Notes             = notes,
+                    LastUpdated       = DateTime.Now,
+                    LastUpdatedBy     = "system",
+                    LastUpdatedByName = "Hệ thống (auto)"
+                });
+            }
+            else
+            {
+                tank.TankName          = tankName;
+                tank.MaleCount         = male;
+                tank.FemaleCount       = female;
+                if (notes != null) tank.Notes = notes;
+                tank.LastUpdated       = DateTime.Now;
+                tank.LastUpdatedBy     = "system";
+                tank.LastUpdatedByName = "Hệ thống (auto)";
+            }
+
+            await _context.SaveChangesAsync();
+        }
     }
 
     // DTOs
@@ -238,6 +335,7 @@ namespace BaseCore.APIService.Controllers
     {
         public string Name { get; set; } = "";
         public decimal Price { get; set; }
+        public decimal? PairPrice { get; set; }
         public int Stock { get; set; }
         public int CategoryId { get; set; }
         public string? Description { get; set; }
@@ -252,6 +350,7 @@ namespace BaseCore.APIService.Controllers
     {
         public string? Name { get; set; }
         public decimal? Price { get; set; }
+        public decimal? PairPrice { get; set; }
         public int? Stock { get; set; }
         public int? CategoryId { get; set; }
         public string? Description { get; set; }

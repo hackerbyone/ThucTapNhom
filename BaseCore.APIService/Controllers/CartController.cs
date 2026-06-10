@@ -95,7 +95,7 @@ namespace BaseCore.APIService.Controllers
             try
             {
                 var userId = GetUserId();
-                var order = await _orderService.CheckoutAsync(userId, dto.ShippingAddress, dto.CustomerName, dto.CustomerPhone);
+                var order = await _orderService.CheckoutAsync(userId, dto.ShippingAddress, dto.CustomerName, dto.CustomerPhone, dto.ShippingFee);
                 return Ok(new
                 {
                     message = "Đặt hàng thành công",
