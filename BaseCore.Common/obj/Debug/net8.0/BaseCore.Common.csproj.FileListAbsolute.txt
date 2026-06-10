@@ -11,3 +11,16 @@ D:\Cong_Nghe_Web\BaseCore.Common\obj\Debug\net8.0\BaseCore.Common.dll
 D:\Cong_Nghe_Web\BaseCore.Common\obj\Debug\net8.0\refint\BaseCore.Common.dll
 D:\Cong_Nghe_Web\BaseCore.Common\obj\Debug\net8.0\BaseCore.Common.pdb
 D:\Cong_Nghe_Web\BaseCore.Common\obj\Debug\net8.0\ref\BaseCore.Common.dll
+D:\ThucTapNhom\BaseCore.Common\bin\Debug\net8.0\BaseCore.Common.deps.json
+D:\ThucTapNhom\BaseCore.Common\bin\Debug\net8.0\BaseCore.Common.dll
+D:\ThucTapNhom\BaseCore.Common\bin\Debug\net8.0\BaseCore.Common.pdb
+D:\ThucTapNhom\BaseCore.Common\obj\Debug\net8.0\BaseCore.Common.csproj.AssemblyReference.cache
+D:\ThucTapNhom\BaseCore.Common\obj\Debug\net8.0\BaseCore.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\ThucTapNhom\BaseCore.Common\obj\Debug\net8.0\BaseCore.Common.AssemblyInfoInputs.cache
+D:\ThucTapNhom\BaseCore.Common\obj\Debug\net8.0\BaseCore.Common.AssemblyInfo.cs
+D:\ThucTapNhom\BaseCore.Common\obj\Debug\net8.0\BaseCore.Common.csproj.CoreCompileInputs.cache
+D:\ThucTapNhom\BaseCore.Common\obj\Debug\net8.0\BaseCore.Common.sourcelink.json
+D:\ThucTapNhom\BaseCore.Common\obj\Debug\net8.0\BaseCore.Common.dll
+D:\ThucTapNhom\BaseCore.Common\obj\Debug\net8.0\refint\BaseCore.Common.dll
+D:\ThucTapNhom\BaseCore.Common\obj\Debug\net8.0\BaseCore.Common.pdb
+D:\ThucTapNhom\BaseCore.Common\obj\Debug\net8.0\ref\BaseCore.Common.dll
