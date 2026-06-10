@@ -43,11 +43,11 @@ export const cartService = {
     return handleResponse(response, 'Failed to clear cart');
   },
 
-  checkout: async (shippingAddress, shippingMethod = 'Standard', paymentMethod = 'COD', customerName, customerPhone) => {
+  checkout: async (shippingAddress, shippingMethod = 'Standard', paymentMethod = 'COD', customerName, customerPhone, shippingFee = 0) => {
     const response = await fetch(buildUrl('/api/cart/checkout'), {
       method: 'POST',
       headers: getHeaders(true),
-      body: JSON.stringify({ shippingAddress, shippingMethod, paymentMethod, customerName, customerPhone }),
+      body: JSON.stringify({ shippingAddress, shippingMethod, paymentMethod, customerName, customerPhone, shippingFee }),
     });
     return handleResponse(response, 'Failed to checkout');
   },

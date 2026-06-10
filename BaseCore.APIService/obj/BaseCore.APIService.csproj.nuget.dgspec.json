@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\shopcacanh\\BaseCore\\BaseCore.APIService\\BaseCore.APIService.csproj": {}
+    "D:\\ThucTapNhom\\BaseCore.APIService\\BaseCore.APIService.csproj": {}
   },
   "projects": {
-    "D:\\shopcacanh\\BaseCore\\BaseCore.APIService\\BaseCore.APIService.csproj": {
+    "D:\\ThucTapNhom\\BaseCore.APIService\\BaseCore.APIService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\shopcacanh\\BaseCore\\BaseCore.APIService\\BaseCore.APIService.csproj",
+        "projectUniqueName": "D:\\ThucTapNhom\\BaseCore.APIService\\BaseCore.APIService.csproj",
         "projectName": "BaseCore.APIService",
-        "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.APIService\\BaseCore.APIService.csproj",
-        "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-        "outputPath": "D:\\shopcacanh\\BaseCore\\BaseCore.APIService\\obj\\",
+        "projectPath": "D:\\ThucTapNhom\\BaseCore.APIService\\BaseCore.APIService.csproj",
+        "packagesPath": "C:\\Users\\Bangg\\.nuget\\packages\\",
+        "outputPath": "D:\\ThucTapNhom\\BaseCore.APIService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bangg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,24 +26,24 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\shopcacanh\\BaseCore\\BaseCore.DTO\\BaseCore.DTO.csproj": {
-                "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.DTO\\BaseCore.DTO.csproj"
+              "D:\\ThucTapNhom\\BaseCore.DTO\\BaseCore.DTO.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.DTO\\BaseCore.DTO.csproj"
               },
-              "D:\\shopcacanh\\BaseCore\\BaseCore.Entities\\BaseCore.Entities.csproj": {
-                "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Entities\\BaseCore.Entities.csproj"
+              "D:\\ThucTapNhom\\BaseCore.Entities\\BaseCore.Entities.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.Entities\\BaseCore.Entities.csproj"
               },
-              "D:\\shopcacanh\\BaseCore\\BaseCore.Repository\\BaseCore.Repository.csproj": {
-                "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Repository\\BaseCore.Repository.csproj"
+              "D:\\ThucTapNhom\\BaseCore.Repository\\BaseCore.Repository.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.Repository\\BaseCore.Repository.csproj"
               },
-              "D:\\shopcacanh\\BaseCore\\BaseCore.Services\\BaseCore.Services.csproj": {
-                "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Services\\BaseCore.Services.csproj"
+              "D:\\ThucTapNhom\\BaseCore.Services\\BaseCore.Services.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.Services\\BaseCore.Services.csproj"
               }
             }
           }
@@ -58,10 +58,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper": {
@@ -106,24 +107,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\shopcacanh\\BaseCore\\BaseCore.Common\\BaseCore.Common.csproj": {
+    "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\shopcacanh\\BaseCore\\BaseCore.Common\\BaseCore.Common.csproj",
+        "projectUniqueName": "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj",
         "projectName": "BaseCore.Common",
-        "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Common\\BaseCore.Common.csproj",
-        "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-        "outputPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Common\\obj\\",
+        "projectPath": "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj",
+        "packagesPath": "C:\\Users\\Bangg\\.nuget\\packages\\",
+        "outputPath": "D:\\ThucTapNhom\\BaseCore.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bangg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -132,11 +133,11 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -151,10 +152,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper": {
@@ -198,24 +200,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\shopcacanh\\BaseCore\\BaseCore.DTO\\BaseCore.DTO.csproj": {
+    "D:\\ThucTapNhom\\BaseCore.DTO\\BaseCore.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\shopcacanh\\BaseCore\\BaseCore.DTO\\BaseCore.DTO.csproj",
+        "projectUniqueName": "D:\\ThucTapNhom\\BaseCore.DTO\\BaseCore.DTO.csproj",
         "projectName": "BaseCore.DTO",
-        "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.DTO\\BaseCore.DTO.csproj",
-        "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-        "outputPath": "D:\\shopcacanh\\BaseCore\\BaseCore.DTO\\obj\\",
+        "projectPath": "D:\\ThucTapNhom\\BaseCore.DTO\\BaseCore.DTO.csproj",
+        "packagesPath": "C:\\Users\\Bangg\\.nuget\\packages\\",
+        "outputPath": "D:\\ThucTapNhom\\BaseCore.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bangg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -224,11 +226,11 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -243,10 +245,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper": {
@@ -270,24 +273,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\shopcacanh\\BaseCore\\BaseCore.Entities\\BaseCore.Entities.csproj": {
+    "D:\\ThucTapNhom\\BaseCore.Entities\\BaseCore.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\shopcacanh\\BaseCore\\BaseCore.Entities\\BaseCore.Entities.csproj",
+        "projectUniqueName": "D:\\ThucTapNhom\\BaseCore.Entities\\BaseCore.Entities.csproj",
         "projectName": "BaseCore.Entities",
-        "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Entities\\BaseCore.Entities.csproj",
-        "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-        "outputPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Entities\\obj\\",
+        "projectPath": "D:\\ThucTapNhom\\BaseCore.Entities\\BaseCore.Entities.csproj",
+        "packagesPath": "C:\\Users\\Bangg\\.nuget\\packages\\",
+        "outputPath": "D:\\ThucTapNhom\\BaseCore.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bangg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -296,18 +299,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\shopcacanh\\BaseCore\\BaseCore.Common\\BaseCore.Common.csproj": {
-                "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Common\\BaseCore.Common.csproj"
+              "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj"
               },
-              "D:\\shopcacanh\\BaseCore\\BaseCore.DTO\\BaseCore.DTO.csproj": {
-                "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.DTO\\BaseCore.DTO.csproj"
+              "D:\\ThucTapNhom\\BaseCore.DTO\\BaseCore.DTO.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.DTO\\BaseCore.DTO.csproj"
               }
             }
           }
@@ -322,10 +325,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper": {
@@ -349,24 +353,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\shopcacanh\\BaseCore\\BaseCore.Libs\\BaseCore.Libs.csproj": {
+    "D:\\ThucTapNhom\\BaseCore.Libs\\BaseCore.Libs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\shopcacanh\\BaseCore\\BaseCore.Libs\\BaseCore.Libs.csproj",
+        "projectUniqueName": "D:\\ThucTapNhom\\BaseCore.Libs\\BaseCore.Libs.csproj",
         "projectName": "BaseCore.Libs",
-        "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Libs\\BaseCore.Libs.csproj",
-        "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-        "outputPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Libs\\obj\\",
+        "projectPath": "D:\\ThucTapNhom\\BaseCore.Libs\\BaseCore.Libs.csproj",
+        "packagesPath": "C:\\Users\\Bangg\\.nuget\\packages\\",
+        "outputPath": "D:\\ThucTapNhom\\BaseCore.Libs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bangg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -375,18 +379,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\shopcacanh\\BaseCore\\BaseCore.Common\\BaseCore.Common.csproj": {
-                "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Common\\BaseCore.Common.csproj"
+              "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj"
               },
-              "D:\\shopcacanh\\BaseCore\\BaseCore.Entities\\BaseCore.Entities.csproj": {
-                "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Entities\\BaseCore.Entities.csproj"
+              "D:\\ThucTapNhom\\BaseCore.Entities\\BaseCore.Entities.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.Entities\\BaseCore.Entities.csproj"
               }
             }
           }
@@ -401,10 +405,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper": {
@@ -436,24 +441,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\shopcacanh\\BaseCore\\BaseCore.Repository\\BaseCore.Repository.csproj": {
+    "D:\\ThucTapNhom\\BaseCore.Repository\\BaseCore.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\shopcacanh\\BaseCore\\BaseCore.Repository\\BaseCore.Repository.csproj",
+        "projectUniqueName": "D:\\ThucTapNhom\\BaseCore.Repository\\BaseCore.Repository.csproj",
         "projectName": "BaseCore.Repository",
-        "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Repository\\BaseCore.Repository.csproj",
-        "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-        "outputPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Repository\\obj\\",
+        "projectPath": "D:\\ThucTapNhom\\BaseCore.Repository\\BaseCore.Repository.csproj",
+        "packagesPath": "C:\\Users\\Bangg\\.nuget\\packages\\",
+        "outputPath": "D:\\ThucTapNhom\\BaseCore.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bangg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -462,24 +467,24 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\shopcacanh\\BaseCore\\BaseCore.Common\\BaseCore.Common.csproj": {
-                "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Common\\BaseCore.Common.csproj"
+              "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj"
               },
-              "D:\\shopcacanh\\BaseCore\\BaseCore.DTO\\BaseCore.DTO.csproj": {
-                "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.DTO\\BaseCore.DTO.csproj"
+              "D:\\ThucTapNhom\\BaseCore.DTO\\BaseCore.DTO.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.DTO\\BaseCore.DTO.csproj"
               },
-              "D:\\shopcacanh\\BaseCore\\BaseCore.Entities\\BaseCore.Entities.csproj": {
-                "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Entities\\BaseCore.Entities.csproj"
+              "D:\\ThucTapNhom\\BaseCore.Entities\\BaseCore.Entities.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.Entities\\BaseCore.Entities.csproj"
               },
-              "D:\\shopcacanh\\BaseCore\\BaseCore.Libs\\BaseCore.Libs.csproj": {
-                "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Libs\\BaseCore.Libs.csproj"
+              "D:\\ThucTapNhom\\BaseCore.Libs\\BaseCore.Libs.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.Libs\\BaseCore.Libs.csproj"
               }
             }
           }
@@ -494,10 +499,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper": {
@@ -535,24 +541,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\shopcacanh\\BaseCore\\BaseCore.Services\\BaseCore.Services.csproj": {
+    "D:\\ThucTapNhom\\BaseCore.Services\\BaseCore.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\shopcacanh\\BaseCore\\BaseCore.Services\\BaseCore.Services.csproj",
+        "projectUniqueName": "D:\\ThucTapNhom\\BaseCore.Services\\BaseCore.Services.csproj",
         "projectName": "BaseCore.Services",
-        "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Services\\BaseCore.Services.csproj",
-        "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-        "outputPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Services\\obj\\",
+        "projectPath": "D:\\ThucTapNhom\\BaseCore.Services\\BaseCore.Services.csproj",
+        "packagesPath": "C:\\Users\\Bangg\\.nuget\\packages\\",
+        "outputPath": "D:\\ThucTapNhom\\BaseCore.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bangg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -561,24 +567,24 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\shopcacanh\\BaseCore\\BaseCore.Common\\BaseCore.Common.csproj": {
-                "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Common\\BaseCore.Common.csproj"
+              "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.Common\\BaseCore.Common.csproj"
               },
-              "D:\\shopcacanh\\BaseCore\\BaseCore.DTO\\BaseCore.DTO.csproj": {
-                "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.DTO\\BaseCore.DTO.csproj"
+              "D:\\ThucTapNhom\\BaseCore.DTO\\BaseCore.DTO.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.DTO\\BaseCore.DTO.csproj"
               },
-              "D:\\shopcacanh\\BaseCore\\BaseCore.Entities\\BaseCore.Entities.csproj": {
-                "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Entities\\BaseCore.Entities.csproj"
+              "D:\\ThucTapNhom\\BaseCore.Entities\\BaseCore.Entities.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.Entities\\BaseCore.Entities.csproj"
               },
-              "D:\\shopcacanh\\BaseCore\\BaseCore.Repository\\BaseCore.Repository.csproj": {
-                "projectPath": "D:\\shopcacanh\\BaseCore\\BaseCore.Repository\\BaseCore.Repository.csproj"
+              "D:\\ThucTapNhom\\BaseCore.Repository\\BaseCore.Repository.csproj": {
+                "projectPath": "D:\\ThucTapNhom\\BaseCore.Repository\\BaseCore.Repository.csproj"
               }
             }
           }
@@ -593,10 +599,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper": {
@@ -628,7 +635,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -122,3 +122,53 @@
   color: #764ba2;
   text-decoration: underline;
 }
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  color: #aaa;
+  font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+.googleBtn {
+  width: 100%;
+  padding: 11px 16px;
+  background: #fff;
+  color: #444;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s;
+}
+
+.googleBtn:hover:not(:disabled) {
+  background: #f8f8f8;
+  border-color: #aaa;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+.googleBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.googleIcon {
+  width: 20px;
+  height: 20px;
+}

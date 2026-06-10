@@ -1,0 +1,122 @@
+.page {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f7fa;
+  padding: 32px 16px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.10);
+  padding: 48px 40px;
+  text-align: center;
+  max-width: 440px;
+  width: 100%;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #e3f2fd;
+  border-top-color: #1565c0;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.loadingText {
+  color: #555;
+  font-size: 15px;
+}
+
+.iconSuccess {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-weight: bold;
+}
+
+.iconFail {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #ffebee;
+  color: #c62828;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-weight: bold;
+}
+
+.titleSuccess {
+  color: #2e7d32;
+  font-size: 24px;
+  margin: 0 0 12px;
+}
+
+.titleFail {
+  color: #c62828;
+  font-size: 24px;
+  margin: 0 0 12px;
+}
+
+.desc {
+  color: #555;
+  font-size: 15px;
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+
+.orderRef {
+  color: #333;
+  font-size: 14px;
+  margin: 0 0 24px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.btnPrimary {
+  padding: 11px 24px;
+  background: #1565c0;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background .2s;
+}
+
+.btnPrimary:hover { background: #0d47a1; }
+
+.btnSecondary {
+  padding: 11px 24px;
+  background: #f5f5f5;
+  color: #333;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background .2s;
+}
+
+.btnSecondary:hover { background: #e0e0e0; }

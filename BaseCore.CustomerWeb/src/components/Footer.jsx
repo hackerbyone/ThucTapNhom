@@ -64,9 +64,9 @@ export default function Footer() {
         
         <div className={styles.col}>
           <h4>Liên hệ</h4>
-          <p>📍 123 Đường Thủy Sinh, Q.Tây Hồ, Hà Nội</p>
+          <p>📍 236, Hoàng Quốc Việt, Phường Nghĩa Đô, Hà Nội</p>
           <p>📞 1800-AQUA (0286-688-2782)</p>
-          <p>✉️ hello@aquaviet.vn</p>
+          <p>✉️ trinhminhtri392@gmail.com</p>
           <p>🕐 Mở cửa: 8:00 – 21:00</p>
         </div>
       </div>
