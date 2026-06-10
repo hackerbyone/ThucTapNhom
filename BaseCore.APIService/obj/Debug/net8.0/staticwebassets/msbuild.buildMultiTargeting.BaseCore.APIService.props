@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\BaseCore.APIService.props" />
-</Project>

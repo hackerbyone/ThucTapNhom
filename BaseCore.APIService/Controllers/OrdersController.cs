@@ -2,7 +2,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using BaseCore.Entities;
 using BaseCore.Repository.EFCore;
+using BaseCore.APIService.Services;
 using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
+using BaseCore.Repository;
 
 namespace BaseCore.APIService.Controllers
 {
@@ -14,21 +17,75 @@ namespace BaseCore.APIService.Controllers
         private readonly IOrderRepositoryEF _orderRepository;
         private readonly IOrderDetailRepositoryEF _orderDetailRepository;
         private readonly IProductRepositoryEF _productRepository;
+        private readonly IEmailService _emailService;
+        private readonly MySqlDbContext _db;
 
         public OrdersController(
             IOrderRepositoryEF orderRepository,
             IOrderDetailRepositoryEF orderDetailRepository,
-            IProductRepositoryEF productRepository)
+            IProductRepositoryEF productRepository,
+            IEmailService emailService,
+            MySqlDbContext db)
         {
             _orderRepository = orderRepository;
             _orderDetailRepository = orderDetailRepository;
             _productRepository = productRepository;
+            _emailService = emailService;
+            _db = db;
         }
 
         private string? GetUserId() =>
             User.FindFirst(ClaimTypes.NameIdentifier)?.Value
             ?? User.FindFirst("sub")?.Value
             ?? User.FindFirst("id")?.Value;
+
+        // Auto-cancel đơn nếu quá 24h chưa thanh toán
+        private async Task CheckAndAutoCancelOrder(Order order)
+        {
+            if (order.Status == "WaitingDeposit")
+            {
+                var hoursElapsed = (DateTime.UtcNow - order.OrderDate).TotalHours;
+                if (hoursElapsed > 24)
+                {
+                    // Hoàn lại stock
+                    var details = await _orderDetailRepository.GetByOrderAsync(order.Id);
+                    foreach (var detail in details)
+                    {
+                        var product = await _productRepository.GetByIdAsync(detail.ProductId);
+                        if (product == null) continue;
+
+                        bool isGenderProduct = product.MaleStock > 0 || product.FemaleStock > 0
+                            || !string.IsNullOrEmpty(detail.SelectedGender);
+                        if (isGenderProduct)
+                        {
+                            switch (detail.SelectedGender)
+                            {
+                                case "Đực":
+                                    product.MaleStock += detail.Quantity;
+                                    break;
+                                case "Cái":
+                                    product.FemaleStock += detail.Quantity;
+                                    break;
+                                case "Cặp":
+                                    product.MaleStock += detail.Quantity;
+                                    product.FemaleStock += detail.Quantity;
+                                    break;
+                            }
+                            product.Stock = product.MaleStock + product.FemaleStock;
+                        }
+                        else
+                        {
+                            product.Stock += detail.Quantity;
+                        }
+                        await _productRepository.UpdateAsync(product);
+                    }
+
+                    // Auto cancel
+                    order.Status = "Cancelled";
+                    await _orderRepository.UpdateAsync(order);
+                }
+            }
+        }
 
         // Lấy đơn hàng của user hiện tại — kèm sản phẩm đã đặt
         [HttpGet]
@@ -38,6 +95,12 @@ namespace BaseCore.APIService.Controllers
             if (string.IsNullOrEmpty(userId)) return Unauthorized();
 
             var orders = await _orderRepository.GetByUserAsync(userId);
+
+            // Auto-cancel các đơn quá 24h
+            foreach (var order in orders)
+            {
+                await CheckAndAutoCancelOrder(order);
+            }
 
             var result = new List<object>();
             foreach (var o in orders)
@@ -86,6 +149,9 @@ namespace BaseCore.APIService.Controllers
         {
             var order = await _orderRepository.GetByIdAsync(id);
             if (order == null) return NotFound(new { message = "Order not found" });
+
+            // Auto-cancel nếu quá 24h
+            await CheckAndAutoCancelOrder(order);
 
             var details = await _orderDetailRepository.GetByOrderAsync(id);
             return Ok(new { order, details });
@@ -138,6 +204,22 @@ namespace BaseCore.APIService.Controllers
                 await _orderDetailRepository.AddAsync(detail);
             }
 
+            // Gửi email xác nhận (fire-and-forget)
+            _ = Task.Run(async () =>
+            {
+                try
+                {
+                    var user = await _db.Users.FirstOrDefaultAsync(u => u.Id == userId);
+                    if (user?.Email != null)
+                    {
+                        await _emailService.SendOrderConfirmationAsync(
+                            user.Email, order.CustomerName, order.Id,
+                            order.DepositAmount, order.TotalAmount, order.ShippingAddress);
+                    }
+                }
+                catch { /* silent — email không được block luồng chính */ }
+            });
+
             return CreatedAtAction(nameof(GetById), new { id = order.Id },
                 new { order, details = orderDetails });
         }
@@ -162,10 +244,26 @@ namespace BaseCore.APIService.Controllers
 
             order.Status = dto.Status;
             await _orderRepository.UpdateAsync(order);
+
+            // Gửi email thông báo thay đổi trạng thái (fire-and-forget)
+            _ = Task.Run(async () =>
+            {
+                try
+                {
+                    var user = await _db.Users.FirstOrDefaultAsync(u => u.Id == order.UserId);
+                    if (user?.Email != null)
+                    {
+                        await _emailService.SendOrderStatusUpdateAsync(
+                            user.Email, order.CustomerName, order.Id, dto.Status);
+                    }
+                }
+                catch { /* silent */ }
+            });
+
             return Ok(order);
         }
 
-        // Huỷ đơn — chỉ khi đang WaitingDeposit và trong vòng 3 giờ
+        // Huỷ đơn — chỉ khi đang WaitingDeposit (chưa thanh toán)
         [HttpPut("{id}/cancel")]
         public async Task<IActionResult> CancelOrder(int id)
         {
@@ -176,11 +274,7 @@ namespace BaseCore.APIService.Controllers
                 return BadRequest(new { message = "Đơn hàng đã được huỷ trước đó" });
 
             if (order.Status != "WaitingDeposit")
-                return BadRequest(new { message = "Chỉ có thể huỷ đơn khi đang chờ đặt cọc" });
-
-            var hoursElapsed = (DateTime.UtcNow - order.OrderDate).TotalHours;
-            if (hoursElapsed > 3)
-                return BadRequest(new { message = "Đã quá 3 giờ kể từ khi đặt hàng, không thể huỷ đơn" });
+                return BadRequest(new { message = "Chỉ có thể huỷ đơn khi chưa thanh toán" });
 
             // Hoàn lại stock
             var details = await _orderDetailRepository.GetByOrderAsync(id);
