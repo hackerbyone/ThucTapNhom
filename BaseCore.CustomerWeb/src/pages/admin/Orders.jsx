@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import { buildUrl, getHeaders, handleResponse } from '../../services/utils/apiClient';
 
 const STATUS_LIST = [
-  { value: 'WaitingDeposit', label: 'Chờ đặt cọc',   badge: 'badge-warning'   },
-  { value: 'DepositPaid',    label: 'Đã đặt cọc',    badge: 'badge-primary'   },
-  { value: 'Processing',     label: 'Đang xử lý',    badge: 'badge-info'      },
-  { value: 'Shipping',       label: 'Đang giao',      badge: 'badge-info'      },
-  { value: 'Completed',      label: 'Hoàn thành',     badge: 'badge-success'   },
-  { value: 'Cancelled',      label: 'Đã hủy',         badge: 'badge-danger'    },
+  { value: 'WaitingDeposit', label: 'Chờ đặt cọc', badge: 'badge-warning', icon: 'fa-hourglass-half',  next: 'DepositPaid', nextLabel: 'Xác nhận cọc', nextBtn: 'btn-success' },
+  { value: 'DepositPaid',    label: 'Đã đặt cọc',  badge: 'badge-primary', icon: 'fa-money-bill-wave', next: 'Processing',  nextLabel: 'Bắt đầu xử lý', nextBtn: 'btn-info'   },
+  { value: 'Processing',     label: 'Đang xử lý',  badge: 'badge-info',    icon: 'fa-cog',             next: 'Shipping',    nextLabel: 'Giao hàng',     nextBtn: 'btn-primary'},
+  { value: 'Shipping',       label: 'Đang giao',   badge: 'badge-info',    icon: 'fa-truck',           next: 'Completed',   nextLabel: 'Hoàn thành',    nextBtn: 'btn-success'},
+  { value: 'Completed',      label: 'Hoàn thành',  badge: 'badge-success', icon: 'fa-check-circle',    next: null,          nextLabel: null,             nextBtn: null         },
+  { value: 'Cancelled',      label: 'Đã hủy',      badge: 'badge-danger',  icon: 'fa-times-circle',    next: null,          nextLabel: null,             nextBtn: null         },
 ];
 
 const statusLabel = (val) =>
@@ -229,15 +229,18 @@ export default function Orders() {
 
           <div className="row mb-3">
             {STATUS_LIST.map(s => (
-              <div className="col-6 col-md-3 mb-2" key={s.value}>
+              <div className="col-6 col-md-2 mb-2" key={s.value}>
                 <div
                   className={'small-box ' + s.badge.replace('badge-', 'bg-') + ' mb-0'}
-                  style={{ cursor: 'pointer', opacity: filterStatus === s.value ? 1 : 0.75 }}
+                  style={{ cursor: 'pointer', opacity: filterStatus === s.value ? 1 : 0.72, transition: 'opacity 0.2s' }}
                   onClick={() => setFilter(filterStatus === s.value ? '' : s.value)}
                 >
                   <div className="inner">
                     <h4>{countBy(s.value)}</h4>
-                    <p>{s.label}</p>
+                    <p style={{ fontSize: '0.82rem', marginBottom: 0 }}>{s.label}</p>
+                  </div>
+                  <div className="icon">
+                    <i className={`fas ${s.icon}`}></i>
                   </div>
                 </div>
               </div>
@@ -380,14 +383,14 @@ export default function Orders() {
                               <div>{new Date(order.orderDate).toLocaleDateString('vi-VN')}</div>
                               <div><small className="text-muted">{new Date(order.orderDate).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}</small></div>
                             </td>
-                            <td><strong>{order.totalAmount && order.totalAmount.toLocaleString('vi-VN')} đ</strong></td>
+                            <td><strong>{(order.totalAmount ?? 0).toLocaleString('vi-VN')} đ</strong></td>
                             <td>
                               <span className={order.status === 'WaitingDeposit' ? 'text-warning font-weight-bold' : 'text-success'}>
-                                {order.depositAmount && order.depositAmount.toLocaleString('vi-VN')} đ
+                                {(order.depositAmount ?? 0).toLocaleString('vi-VN')} đ
                               </span>
                             </td>
-                            <td><span className={'badge ' + st.badge}>{st.label}</span></td>
-                            <td>
+                            <td><span className={'badge ' + st.badge}><i className={`fas ${st.icon} mr-1`}></i>{st.label}</span></td>
+                            <td style={{ whiteSpace: 'nowrap' }}>
                               <button className="btn btn-sm btn-outline-primary mr-1" onClick={() => openDetail(order)} title="Xem chi tiết">
                                 <i className="fas fa-eye"></i>
                               </button>
@@ -402,7 +405,7 @@ export default function Orders() {
                                   <option key={s.value} value={s.value}>{s.label}</option>
                                 ))}
                               </select>
-                              {['WaitingDeposit', 'DepositPaid', 'Processing'].includes(order.status) && (
+                              {order.status === 'WaitingDeposit' && (
                                 <button className="btn btn-sm btn-danger" onClick={() => handleCancel(order.id)} disabled={updating} title="Hủy đơn">
                                   <i className="fas fa-times"></i>
                                 </button>
@@ -423,8 +426,8 @@ export default function Orders() {
       {/* Detail Modal */}
       {showDetail && selected && (
         <>
-          <div className="modal fade show" style={{ display: 'block', zIndex: 1050 }} tabIndex="-1">
-            <div className="modal-dialog modal-lg">
+          <div className="modal fade show" style={{ display: 'block', zIndex: 1050, overflowY: 'auto' }} tabIndex="-1">
+            <div className="modal-dialog modal-xl" style={{ margin: '1.5rem auto' }}>
               <div className="modal-content">
                 <div className="modal-header">
                   <h5 className="modal-title">
@@ -447,14 +450,14 @@ export default function Orders() {
                             <tbody>
                               <tr>
                                 <td className="text-muted pl-0" style={{ width: 110 }}>👤 Khách hàng</td>
-                                <td><strong>{(detail?.order || selected).customerName || '—'}</strong></td>
+                                <td><strong>{(detail || selected).customerName || '—'}</strong></td>
                               </tr>
                               <tr>
                                 <td className="text-muted pl-0">📞 Số điện thoại</td>
                                 <td>
-                                  <strong>{(detail?.order || selected).customerPhone || '—'}</strong>
-                                  {(detail?.order || selected).customerPhone && (
-                                    <a href={'tel:' + (detail?.order || selected).customerPhone} className="btn btn-sm btn-outline-success ml-2 py-0 px-1">
+                                  <strong>{(detail || selected).customerPhone || '—'}</strong>
+                                  {(detail || selected).customerPhone && (
+                                    <a href={'tel:' + (detail || selected).customerPhone} className="btn btn-sm btn-outline-success ml-2 py-0 px-1">
                                       <i className="fas fa-phone"></i>
                                     </a>
                                   )}
@@ -462,7 +465,7 @@ export default function Orders() {
                               </tr>
                               <tr>
                                 <td className="text-muted pl-0">🏠 Địa chỉ giao</td>
-                                <td>{(detail?.order || selected).shippingAddress || '—'}</td>
+                                <td>{(detail || selected).shippingAddress || '—'}</td>
                               </tr>
                               <tr>
                                 <td className="text-muted pl-0">📅 Ngày đặt</td>
@@ -476,11 +479,11 @@ export default function Orders() {
                             <div className="card-body py-2">
                               <div className="d-flex justify-content-between mb-1">
                                 <span className="text-muted">Tổng đơn hàng:</span>
-                                <strong>{selected.totalAmount && selected.totalAmount.toLocaleString('vi-VN')} đ</strong>
+                                <strong>{(selected.totalAmount ?? 0).toLocaleString('vi-VN')} đ</strong>
                               </div>
                               <div className="d-flex justify-content-between mb-1">
                                 <span className="text-warning">Đặt cọc (50%):</span>
-                                <strong className="text-warning">{selected.depositAmount && selected.depositAmount.toLocaleString('vi-VN')} đ</strong>
+                                <strong className="text-warning">{(selected.depositAmount ?? 0).toLocaleString('vi-VN')} đ</strong>
                               </div>
                               <div className="d-flex justify-content-between">
                                 <span className="text-muted">Còn lại khi nhận:</span>
@@ -512,19 +515,19 @@ export default function Orders() {
                                 ) : '—'}
                               </td>
                               <td className="text-center">{item.quantity}</td>
-                              <td className="text-right">{item.unitPrice && item.unitPrice.toLocaleString('vi-VN')} đ</td>
-                              <td className="text-right">{item.unitPrice && (item.unitPrice * item.quantity).toLocaleString('vi-VN')} đ</td>
+                              <td className="text-right">{(item.unitPrice ?? 0).toLocaleString('vi-VN')} đ</td>
+                              <td className="text-right">{((item.unitPrice ?? 0) * item.quantity).toLocaleString('vi-VN')} đ</td>
                             </tr>
                           ))}
                         </tbody>
                         <tfoot>
                           <tr>
                             <td colSpan={4} className="text-right">Tổng đơn hàng:</td>
-                            <td className="text-right"><strong>{selected.totalAmount && selected.totalAmount.toLocaleString('vi-VN')} đ</strong></td>
+                            <td className="text-right"><strong>{(selected.totalAmount ?? 0).toLocaleString('vi-VN')} đ</strong></td>
                           </tr>
                           <tr>
                             <td colSpan={4} className="text-right text-warning">Đặt cọc (50%):</td>
-                            <td className="text-right text-warning"><strong>{selected.depositAmount && selected.depositAmount.toLocaleString('vi-VN')} đ</strong></td>
+                            <td className="text-right text-warning"><strong>{(selected.depositAmount ?? 0).toLocaleString('vi-VN')} đ</strong></td>
                           </tr>
                         </tfoot>
                       </table>
@@ -538,27 +541,28 @@ export default function Orders() {
                               <i className="fas fa-lock mr-1"></i>
                               Đơn hàng đã {selected.status === 'Completed' ? 'hoàn thành' : 'bị hủy'}, không thể thay đổi
                             </span>
-                          ) : (
-                            <>
-                              <select
-                                className="form-control form-control-sm"
-                                value={selected.status}
-                                onChange={e => handleUpdateStatus(selected.id, e.target.value)}
-                                disabled={updating}
-                                style={{ width: 200 }}
-                              >
-                                {STATUS_LIST.map(s => (
-                                  <option key={s.value} value={s.value}>{s.label}</option>
-                                ))}
-                              </select>
-                              {['WaitingDeposit', 'DepositPaid', 'Processing'].includes(selected.status) && (
-                                <button className="btn btn-sm btn-danger" onClick={() => handleCancel(selected.id)} disabled={updating}>
-                                  <i className="fas fa-times mr-1"></i> Hủy đơn
-                                </button>
-                              )}
-                              {updating && <div className="spinner-border spinner-border-sm text-primary" role="status"></div>}
-                            </>
-                          )}
+                          ) : (() => {
+                            const stInfo = statusLabel(selected.status);
+                            return (
+                              <>
+                                {stInfo.next && (
+                                  <button
+                                    className={`btn btn-sm ${stInfo.nextBtn}`}
+                                    onClick={() => handleUpdateStatus(selected.id, stInfo.next)}
+                                    disabled={updating}
+                                  >
+                                    <i className="fas fa-arrow-right mr-1"></i>{stInfo.nextLabel}
+                                  </button>
+                                )}
+                                {['WaitingDeposit', 'DepositPaid', 'Processing'].includes(selected.status) && (
+                                  <button className="btn btn-sm btn-danger" onClick={() => handleCancel(selected.id)} disabled={updating}>
+                                    <i className="fas fa-ban mr-1"></i> Hủy đơn
+                                  </button>
+                                )}
+                                {updating && <div className="spinner-border spinner-border-sm text-primary" role="status"></div>}
+                              </>
+                            );
+                          })()}
                         </div>
                       </div>
                     </>

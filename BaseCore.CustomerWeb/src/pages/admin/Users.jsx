@@ -63,6 +63,20 @@ const Users = () => {
                 totalCountData = response.length;
             }
             
+            // Normalize: handle cả camelCase lẫn PascalCase từ API
+            userData = userData.map(u => ({
+                ...u,
+                id: u.id || u.Id,
+                username: u.username || u.Username || u.userName || u.UserName,
+                name: u.name || u.Name,
+                email: u.email || u.Email,
+                phone: u.phone || u.Phone,
+                position: u.position || u.Position,
+                isActive: u.isActive ?? u.IsActive ?? true,
+                userType: u.userType ?? u.UserType ?? 2,
+                created: u.created || u.Created,
+            }));
+
             setUsers(userData);
             setTotalPages(totalPagesData);
             setTotalCount(totalCountData);
@@ -91,7 +105,7 @@ const Users = () => {
                 email: user.email || '',
                 phone: user.phone || '',
                 position: user.position || '',
-                userType: user.userType || 0,
+                userType: user.userType ?? user.UserType ?? 2,
                 isActive: user.isActive,
             });
         } else {
@@ -133,8 +147,8 @@ const Users = () => {
     const fetchUserOrders = async (userId) => {
         setUserOrdersLoading(true);
         try {
-            const response = await orderService.getByUserId(userId, 1, 50);
-            setUserOrders(Array.isArray(response) ? response : response.data?.data || response.items || []);
+            const response = await orderService.getByUserIdAdmin(userId);
+            setUserOrders(Array.isArray(response) ? response : []);
         } catch (error) {
             console.error('Failed to fetch user orders:', error);
             setUserOrders([]);

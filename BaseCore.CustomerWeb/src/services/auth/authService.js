@@ -20,15 +20,6 @@ export const authService = {
     return handleResponse(response, 'Register failed');
   },
 
-  loginWithGoogle: async (accessToken) => {
-    const response = await fetch(buildUrl('/api/auth/google'), {
-      method: 'POST',
-      headers: getHeaders(),
-      body: JSON.stringify({ accessToken }),
-    });
-    return handleResponse(response, 'Đăng nhập Google thất bại');
-  },
-
   logout: () => {
     sessionStorage.removeItem('auth');
   },

@@ -103,3 +103,10 @@
   color: white;
   border-color: var(--teal);
 }
+
+.cardError {
+  margin: 4px 0 0;
+  color: #b45309;
+  font-size: 12px;
+  line-height: 1.35;
+}

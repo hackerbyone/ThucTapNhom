@@ -11,6 +11,12 @@ function formatPrice(n) {
   return (n ?? 0).toLocaleString('vi-VN') + 'đ';
 }
 
+function parseUtcDate(d) {
+  if (!d) return new Date(NaN)
+  const s = typeof d === 'string' && !d.endsWith('Z') && !d.includes('+') ? d + 'Z' : d
+  return new Date(s)
+}
+
 export default function OrderHistory() {
   const { user } = useAuth();
   const navigate = useNavigate();
@@ -174,28 +180,28 @@ export default function OrderHistory() {
                           </span>
                         )}
                       </td>
-                      <td style={{ whiteSpace: 'nowrap' }}>{new Date(order.orderDate).toLocaleString('vi-VN')}</td>
+                      <td style={{ whiteSpace: 'nowrap' }}>{parseUtcDate(order.orderDate).toLocaleString('vi-VN')}</td>
                       <td className={styles.totalAmount}>{formatPrice(order.totalAmount)}</td>
                       <td>{renderStatus(order.status)}</td>
                       {/* FIX 6+7: fix lệch - dùng div flex wrap, thêm nút Theo dõi đơn hàng */}
                       <td className={styles.actionCell}>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem', alignItems: 'center' }}>
                           {/* FIX 7: Nút Theo dõi đơn hàng */}
-                          {['WaitingDeposit', 'DepositPaid', 'Processing', 'Shipping'].includes(order.status) && (
-                            <button
-                              onClick={() => navigate(`/payment/${order.id}`)}
-                              className={styles.btnTrack}
-                              title="Theo dõi đơn hàng"
-                            >
-                              📍 Theo dõi
-                            </button>
-                          )}
                           {order.status === 'WaitingDeposit' && (
                             <button
                               onClick={() => navigate(`/payment/${order.id}`)}
                               className={styles.btnPay}
                             >
                               💳 Thanh toán
+                            </button>
+                          )}
+                          {['DepositPaid', 'Processing', 'Shipping'].includes(order.status) && (
+                            <button
+                              onClick={() => navigate(`/payment/${order.id}`)}
+                              className={styles.btnTrack}
+                              title="Theo dõi đơn hàng"
+                            >
+                              📍 Theo dõi
                             </button>
                           )}
                           {order.status === 'WaitingDeposit' && (

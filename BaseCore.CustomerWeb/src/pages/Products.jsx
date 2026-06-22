@@ -5,12 +5,19 @@ import { categoryService } from '../services/category/categoryService'
 import ProductCard from '../components/ProductCard'
 import styles from './Products.module.css'
 
+const STEP = 10000
+
 export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams()
   const catFilter = searchParams.get('cat') || ''
   const query = searchParams.get('q') || ''
+
   const [sort, setSort] = useState('default')
-  const [priceRange, setPriceRange] = useState(3000000)
+  const [maxPriceCap, setMaxPriceCap] = useState(null) // null = đang fetch
+  const [minVal, setMinVal] = useState(0)
+  const [maxVal, setMaxVal] = useState(0)
+  const [minPrice, setMinPrice] = useState(null)
+  const [maxPrice, setMaxPrice] = useState(null)
   const [page, setPage] = useState(1)
   const [pageSize] = useState(12)
 
@@ -18,21 +25,34 @@ export default function Products() {
   const [categories, setCategories] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [totalCount, setTotalCount] = useState(0)   // tổng TRƯỚC khi lọc giá local
+  const [totalCount, setTotalCount] = useState(0)
   const [totalPages, setTotalPages] = useState(1)
 
-  // FIX 9: reset về page 1 khi đổi danh mục hoặc query
+  const commitPrice = () => {
+    setMinPrice(minVal > 0 ? minVal : null)
+    setMaxPrice(maxVal < maxPriceCap ? maxVal : null)
+  }
+
+  const resetPrice = () => {
+    setMinVal(0)
+    setMaxVal(maxPriceCap)
+    setMinPrice(null)
+    setMaxPrice(null)
+  }
+
+  // reset về page 1 khi đổi filter hoặc sort
   useEffect(() => {
     setPage(1)
-  }, [catFilter, query])
+  }, [catFilter, query, sort, minPrice, maxPrice])
 
-  // Fetch products
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         setLoading(true)
         const categoryId = catFilter ? parseInt(catFilter) : null
-        const res = await productService.getAll(query, categoryId, page, pageSize)
+        // price-asc / price-desc sắp xếp ở server; rating sắp xếp ở client
+        const serverSort = (sort === 'price-asc' || sort === 'price-desc') ? sort : null
+        const res = await productService.getAll(query, categoryId, page, pageSize, minPrice, maxPrice, serverSort)
         setProducts(res.items || [])
         setTotalCount(res.totalCount || 0)
         setTotalPages(res.totalPages || Math.ceil((res.totalCount || 0) / pageSize))
@@ -43,28 +63,33 @@ export default function Products() {
       }
     }
     fetchProducts()
-  }, [query, catFilter, page])
+  }, [query, catFilter, page, sort, minPrice, maxPrice])
 
-  // Fetch categories
+  useEffect(() => {
+    productService.getMaxPrice()
+      .then(data => {
+        const cap = Math.max(data.maxPrice || 0, STEP * 2)
+        setMaxPriceCap(cap)
+        setMaxVal(cap)
+      })
+      .catch(() => {
+        setMaxPriceCap(10000000)
+        setMaxVal(10000000)
+      })
+  }, [])
+
   useEffect(() => {
     categoryService.getAll()
       .then(res => setCategories(res))
       .catch(() => {})
   }, [])
 
-  // Sort locally
-  const sorted = [...products].sort((a, b) => {
-    if (sort === 'price-asc') return (a.price || 0) - (b.price || 0)
-    if (sort === 'price-desc') return (b.price || 0) - (a.price || 0)
-    if (sort === 'rating') return (b.rating || 0) - (a.rating || 0)
-    return 0
-  })
-
-  // Filter by price locally
-  const filtered = sorted.filter(p => (p.price || 0) <= priceRange)
+  // rating sort là client-side (sắp xếp trong trang hiện tại)
+  const displayed = sort === 'rating'
+    ? [...products].sort((a, b) => (b.rating || 0) - (a.rating || 0))
+    : products
 
   const handleCategoryClick = (id) => {
-    // FIX 9: reset page về 1 khi chọn danh mục
     setPage(1)
     if (id === 'all') {
       setSearchParams({})
@@ -72,13 +97,6 @@ export default function Products() {
       setSearchParams({ cat: id })
     }
   }
-
-  // FIX 8: hiển thị đúng số sản phẩm
-  // - filtered.length: số hiển thị trên trang hiện tại (sau lọc giá)
-  // - totalCount: tổng từ server (dùng cho pagination)
-  const displayCount = query || catFilter
-    ? totalCount   // khi có filter server → dùng totalCount
-    : totalCount   // luôn hiển thị tổng từ server
 
   return (
     <main className={styles.page}>
@@ -91,7 +109,6 @@ export default function Products() {
               className={`${styles.catBtn} ${!catFilter ? styles.active : ''}`}
               onClick={() => handleCategoryClick('all')}
             >
-              {/* FIX 8: hiển thị tổng đúng */}
               Tất cả ({totalCount})
             </button>
             {categories.map(c => (
@@ -106,17 +123,52 @@ export default function Products() {
           </div>
 
           <div className={styles.filterGroup}>
-            <h3>Giá tối đa</h3>
-            <input
-              type="range" min={10000} max={3000000} step={10000}
-              value={priceRange}
-              onChange={e => setPriceRange(+e.target.value)}
-              className={styles.range}
-            />
-            <div className={styles.rangeLabel}>
-              <span>0đ</span>
-              <span>{priceRange.toLocaleString('vi-VN')}đ</span>
-            </div>
+            <h3>Khoảng giá</h3>
+            {maxPriceCap === null ? (
+              <p style={{ fontSize: '0.85rem', color: '#aaa' }}>Đang tải...</p>
+            ) : (
+              <>
+                <div className={styles.dualRange}>
+                  <div className={styles.dualRangeTrack}>
+                    <div
+                      className={styles.dualRangeFill}
+                      style={{
+                        left: `${(minVal / maxPriceCap) * 100}%`,
+                        width: `${((maxVal - minVal) / maxPriceCap) * 100}%`
+                      }}
+                    />
+                  </div>
+                  <input
+                    type="range"
+                    min={0} max={maxPriceCap} step={STEP}
+                    value={minVal}
+                    onChange={e => setMinVal(Math.min(+e.target.value, maxVal - STEP))}
+                    onMouseUp={commitPrice}
+                    onTouchEnd={commitPrice}
+                    className={styles.rangeInput}
+                    style={{ zIndex: minVal >= maxVal - STEP ? 5 : undefined }}
+                  />
+                  <input
+                    type="range"
+                    min={0} max={maxPriceCap} step={STEP}
+                    value={maxVal}
+                    onChange={e => setMaxVal(Math.max(+e.target.value, minVal + STEP))}
+                    onMouseUp={commitPrice}
+                    onTouchEnd={commitPrice}
+                    className={styles.rangeInput}
+                  />
+                </div>
+                <div className={styles.rangeLabels}>
+                  <span>{minVal > 0 ? minVal.toLocaleString('vi-VN') + 'đ' : '0đ'}</span>
+                  <span>{maxVal.toLocaleString('vi-VN')}đ</span>
+                </div>
+                {(minPrice != null || maxPrice != null) && (
+                  <button className={styles.clearPriceBtn} onClick={resetPrice}>
+                    Xóa bộ lọc giá
+                  </button>
+                )}
+              </>
+            )}
           </div>
         </aside>
 
@@ -125,13 +177,7 @@ export default function Products() {
           <div className={styles.toolbar}>
             <p className={styles.count}>
               {query ? `Kết quả cho "${query}": ` : ''}
-              {/* FIX 8: hiển thị số đúng — filtered.length cho biết bao nhiêu đang hiển thị */}
-              <strong>{filtered.length}</strong> sản phẩm
-              {filtered.length !== totalCount && totalCount > 0 && (
-                <span style={{ color: '#9ca3af', fontSize: '0.85rem', marginLeft: '0.4rem' }}>
-                  (tổng {totalCount})
-                </span>
-              )}
+              <strong>{totalCount}</strong> sản phẩm
             </p>
             <select className={styles.sort} value={sort} onChange={e => setSort(e.target.value)}>
               <option value="default">Mặc định</option>
@@ -145,15 +191,14 @@ export default function Products() {
             <div className={styles.empty}><span>⏳</span><p>Đang tải...</p></div>
           ) : error ? (
             <div className={styles.empty}><span>❌</span><p>Lỗi: {error}</p></div>
-          ) : filtered.length === 0 ? (
+          ) : displayed.length === 0 ? (
             <div className={styles.empty}><span>🔍</span><p>Không tìm thấy sản phẩm phù hợp</p></div>
           ) : (
             <div className={styles.grid}>
-              {filtered.map(p => <ProductCard key={p.id} product={p} />)}
+              {displayed.map(p => <ProductCard key={p.id} product={p} />)}
             </div>
           )}
 
-          {/* FIX 9: Pagination dùng totalPages từ server, không dùng filtered.length */}
           {!loading && totalCount > 0 && (
             <div className={styles.pagination}>
               <button disabled={page === 1} onClick={() => setPage(p => p - 1)}>← Trước</button>

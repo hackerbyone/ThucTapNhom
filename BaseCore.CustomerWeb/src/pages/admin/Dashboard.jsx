@@ -141,6 +141,46 @@ export default function Dashboard() {
                   </Link>
                 </div>
               </div>
+              <div className="col-lg-3 col-6">
+                <div className="small-box" style={{ background: 'linear-gradient(135deg, #6c757d, #868e96)' }}>
+                  <div className="inner">
+                    <h3><i className="fas fa-warehouse"></i></h3>
+                    <p>Quản lý kho</p>
+                  </div>
+                  <div className="icon"><i className="fas fa-boxes"></i></div>
+                  <Link to="/admin/warehouse" className="small-box-footer">
+                    Quản lý <i className="fas fa-arrow-circle-right"></i>
+                  </Link>
+                </div>
+              </div>
+              {isAdminFn() && (
+                <>
+                  <div className="col-lg-3 col-6">
+                    <div className="small-box" style={{ background: 'linear-gradient(135deg, #20c997, #38d9a9)' }}>
+                      <div className="inner">
+                        <h3><i className="fas fa-chart-bar"></i></h3>
+                        <p>Thống kê</p>
+                      </div>
+                      <div className="icon"><i className="fas fa-chart-line"></i></div>
+                      <Link to="/admin/statistics" className="small-box-footer">
+                        Xem thống kê <i className="fas fa-arrow-circle-right"></i>
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="col-lg-3 col-6">
+                    <div className="small-box" style={{ background: 'linear-gradient(135deg, #fd7e14, #ffa54d)' }}>
+                      <div className="inner">
+                        <h3><i className="fas fa-bell"></i></h3>
+                        <p>Thông báo nội bộ</p>
+                      </div>
+                      <div className="icon"><i className="fas fa-envelope"></i></div>
+                      <Link to="/admin/internal-notifications" className="small-box-footer">
+                        Quản lý <i className="fas fa-arrow-circle-right"></i>
+                      </Link>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           )}
 
@@ -160,8 +200,12 @@ export default function Dashboard() {
                       <ul>
                         <li>Quản lý sản phẩm (CRUD, tìm kiếm, phân trang)</li>
                         <li>Quản lý danh mục</li>
+                        <li>Quản lý đơn hàng</li>
+                        <li>Quản lý kho hàng</li>
                         <li>Quản lý bài viết blog</li>
                         <li>Quản lý người dùng (Admin)</li>
+                        <li>Thống kê doanh thu (Admin)</li>
+                        <li>Thông báo nội bộ (Admin)</li>
                       </ul>
                     </div>
                     <div className="col-md-6">
