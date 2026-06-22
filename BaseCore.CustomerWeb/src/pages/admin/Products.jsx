@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { productService } from '../../services/product/productService';
 import { categoryService } from '../../services/category/categoryService';
 import { uploadService } from '../../services/upload/uploadService';
@@ -68,6 +69,14 @@ const Products = () => {
         }
     };
 
+    const getProductCategoryName = (product) => {
+        if (product.categoryName) return product.categoryName;
+        if (product.category?.name) return product.category.name;
+
+        const category = categories.find(cat => String(cat.id) === String(product.categoryId));
+        return category?.name || 'Chưa phân loại';
+    };
+
     const handleSearch = (e) => {
         e.preventDefault();
         setPage(1);
@@ -75,6 +84,7 @@ const Products = () => {
     };
 
     const openModal = (product = null) => {
+        document.body.classList.add('modal-open');
         if (product) {
             setEditingProduct(product);
             setFormData({
@@ -109,6 +119,7 @@ const Products = () => {
     };
 
     const closeModal = () => {
+        document.body.classList.remove('modal-open');
         setShowModal(false);
         setEditingProduct(null);
         setError('');
@@ -124,7 +135,6 @@ const Products = () => {
         const genderTotal = maleStock + femaleStock;
         const isGenderProduct = maleStock > 0 || femaleStock > 0;
 
-        // Validation: khi dùng gender, tổng đực + cái phải BẰNG tổng kho (nếu stock > 0)
         if (isGenderProduct && stock > 0 && stock !== genderTotal) {
             const diff = stock - genderTotal;
             setError(
@@ -139,7 +149,6 @@ const Products = () => {
             const data = {
                 ...formData,
                 price: parseFloat(formData.price),
-                // Khi dùng gender: stock = tổng gender (auto-sync, không phụ thuộc ô nhập)
                 stock: isGenderProduct ? genderTotal : stock,
                 categoryId: parseInt(formData.categoryId),
                 maleStock,
@@ -319,10 +328,10 @@ const Products = () => {
                                                             <td><strong>{product.name}</strong></td>
                                                             <td>
                                                                 <span className="badge badge-light" style={{ background: '#e8f4fd', color: '#3d8bc2', border: '1px solid #a8d5f0' }}>
-                                                                    {product.category?.name || 'N/A'}
+                                                                    {getProductCategoryName(product)}
                                                                 </span>
                                                             </td>
-                                                            <td className="font-weight-bold text-danger">
+                                                            <td style={{ fontWeight: 700, color: '#dc3545' }}>
                                                                 {product.price?.toLocaleString('vi-VN')} đ
                                                             </td>
                                                             <td>
@@ -331,18 +340,16 @@ const Products = () => {
                                                                 </span>
                                                             </td>
                                                             {isAdmin() && (
-                                                                <td>
+                                                                <td className="text-center">
                                                                     <button
-                                                                        className="btn btn-xs btn-warning mr-1"
-                                                                        style={{ padding: '0.25rem 0.5rem', fontSize: '0.75rem' }}
+                                                                        className="btn btn-warning btn-xs mr-1"
                                                                         onClick={() => openModal(product)}
                                                                         title="Chỉnh sửa"
                                                                     >
                                                                         <i className="fas fa-edit"></i>
                                                                     </button>
                                                                     <button
-                                                                        className="btn btn-xs btn-danger"
-                                                                        style={{ padding: '0.25rem 0.5rem', fontSize: '0.75rem' }}
+                                                                        className="btn btn-danger btn-xs"
                                                                         onClick={() => handleDelete(product.id)}
                                                                         title="Xóa"
                                                                     >
@@ -384,10 +391,9 @@ const Products = () => {
                 </div>
             </section>
 
-            {/* Modal Thêm/Sửa */}
-            {showModal && (
+            {showModal && createPortal(
                 <div className="modal fade show" style={{ display: 'block' }} tabIndex="-1">
-                    <div className="modal-dialog">
+                    <div className="modal-dialog modal-lg modal-dialog-scrollable">
                         <div className="modal-content">
                             <div className="modal-header">
                                 <h5 className="modal-title">
@@ -398,8 +404,8 @@ const Products = () => {
                                     <span>&times;</span>
                                 </button>
                             </div>
-                            <form onSubmit={handleSubmit}>
-                                <div className="modal-body">
+                            <form onSubmit={handleSubmit} style={{ display: 'contents' }}>
+                                <div className="modal-body" style={{ overflowY: 'auto' }}>
                                     {error && (
                                         <div className="alert alert-danger">
                                             <i className="fas fa-exclamation-circle mr-2"></i>{error}
@@ -662,9 +668,13 @@ const Products = () => {
                             </form>
                         </div>
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
-            {showModal && <div className="modal-backdrop fade show"></div>}
+            {showModal && createPortal(
+                <div className="modal-backdrop fade show"></div>,
+                document.body
+            )}
         </>
     );
 };

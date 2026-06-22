@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import { useAuth } from '../context/AuthContext'
 import { cartService } from '../services/cart/cartService'
-import { PROVINCES } from '../data/vietnamAddress'
 import styles from './Cart.module.css'
 
 function formatPrice(n) { return n.toLocaleString('vi-VN') + 'đ' }
@@ -13,17 +12,19 @@ export default function Cart() {
   const { user } = useAuth()
   const navigate = useNavigate()
   const [showCheckout, setShowCheckout] = useState(false)
-  const [checkoutStep, setCheckoutStep] = useState(1)   // 1 = nhập thông tin, 2 = xác nhận cọc
-  const [checkoutResult, setCheckoutResult] = useState(null) // kết quả từ backend
   const [checkoutData, setCheckoutData] = useState({
     customerName: '',
     customerPhone: '',
     province: '',
-    district: '',
+    ward: '',
     streetAddress: '',
   })
+  const [provinces, setProvinces] = useState([])
+  const [wards, setWards] = useState([])
+  const [loadingWards, setLoadingWards] = useState(false)
   const [checkoutLoading, setCheckoutLoading] = useState(false)
   const [checkoutError, setCheckoutError] = useState(null)
+  const [stockNotice, setStockNotice] = useState('')
 
   useEffect(() => {
     if (user) {
@@ -35,15 +36,61 @@ export default function Cart() {
     }
   }, [user])
 
+  useEffect(() => {
+    fetch('https://provinces.open-api.vn/api/p/')
+      .then(r => r.json())
+      .then(data => setProvinces(data))
+      .catch(() => {})
+  }, [])
+
+  useEffect(() => {
+    if (error) setStockNotice(error)
+  }, [error])
+
   const handleClearName = () => {
     setCheckoutData(prev => ({ ...prev, customerName: '' }))
   }
 
-  const handleProvinceChange = (value) => {
-    setCheckoutData(prev => ({ ...prev, province: value, district: '' }))
+  const handleProvinceChange = async (value) => {
+    const selectedProv = provinces.find(p => p.name === value)
+    setCheckoutData(prev => ({ ...prev, province: value, ward: '' }))
+    setWards([])
+    if (!selectedProv) return
+    setLoadingWards(true)
+    try {
+      const resp = await fetch(`https://provinces.open-api.vn/api/p/${selectedProv.code}?depth=3`)
+      const data = await resp.json()
+      const allWards = data.districts?.flatMap(d => d.wards || []) || []
+      setWards(allWards)
+    } catch {
+      setWards([])
+    } finally {
+      setLoadingWards(false)
+    }
   }
 
-  const selectedProvince = PROVINCES.find(p => p.name === checkoutData.province)
+  const hasStockLimit = (item) =>
+    item.availableStock !== null && item.availableStock !== undefined
+
+  const getStockUnit = (item) => {
+    if (item.selectedGender === 'Cặp') return 'cặp'
+    if (item.selectedGender) return `con ${item.selectedGender.toLowerCase()}`
+    return 'sản phẩm'
+  }
+
+  const getStockLimitMessage = (item) => {
+    const unit = getStockUnit(item)
+    return `Chỉ còn ${item.availableStock} ${unit} trong kho. Bạn không thể tăng thêm số lượng cho sản phẩm này.`
+  }
+
+  const increaseQuantity = (item) => {
+    if (hasStockLimit(item) && item.quantity >= item.availableStock) {
+      setStockNotice(getStockLimitMessage(item))
+      return
+    }
+    setStockNotice('')
+    setQty(item.id, item.quantity + 1)
+  }
 
   const shipping = total >= 500000 ? 0 : 35000
   const grandTotal = total + shipping
@@ -53,22 +100,18 @@ export default function Cart() {
   }
 
   const openCheckoutModal = () => {
-    setCheckoutStep(1)
-    setCheckoutResult(null)
     setCheckoutError(null)
     setShowCheckout(true)
   }
 
   const closeCheckoutModal = () => {
     setShowCheckout(false)
-    setCheckoutStep(1)
-    setCheckoutResult(null)
     setCheckoutError(null)
   }
 
   const handleCheckout = async () => {
     if (!checkoutData.customerName.trim() || !checkoutData.customerPhone.trim() ||
-        !checkoutData.province || !checkoutData.district || !checkoutData.streetAddress.trim()) {
+        !checkoutData.province || !checkoutData.ward || !checkoutData.streetAddress.trim()) {
       setCheckoutError('Vui lòng điền đầy đủ thông tin giao hàng')
       return
     }
@@ -76,7 +119,7 @@ export default function Cart() {
     try {
       setCheckoutLoading(true)
       setCheckoutError(null)
-      const fullAddress = `${checkoutData.streetAddress}, ${checkoutData.district}, ${checkoutData.province}`
+      const fullAddress = `${checkoutData.streetAddress}, ${checkoutData.ward}, ${checkoutData.province}`
       const result = await cartService.checkout(
         fullAddress,
         'Standard',
@@ -85,9 +128,8 @@ export default function Cart() {
         checkoutData.customerPhone,
         shipping
       )
-      clear()
+      await clear()
       closeCheckoutModal()
-      // Tự động chuyển sang trang thanh toán cọc ngay sau khi đặt hàng thành công
       navigate(`/payment/${result.orderId}`, { state: { order: result } })
     } catch (err) {
       setCheckoutError(err.message)
@@ -96,13 +138,7 @@ export default function Cart() {
     }
   }
 
-  const goToPayment = () => {
-    if (!checkoutResult) return
-    closeCheckoutModal()
-    navigate(`/payment/${checkoutResult.orderId}`, { state: { order: checkoutResult } })
-  }
-
-  if (isLoading) return (
+  if (isLoading && cart.length === 0) return (
     <main className={styles.page}>
       <div className={styles.container}>
         <div className={styles.empty}>
@@ -112,7 +148,7 @@ export default function Cart() {
     </main>
   )
 
-  if (error) return (
+  if (error && cart.length === 0) return (
     <main className={styles.page}>
       <div className={styles.container}>
         <div className={styles.empty}>
@@ -145,6 +181,12 @@ export default function Cart() {
           <h1>Giỏ hàng của bạn</h1>
           <span>{cart.reduce((s, i) => s + i.quantity, 0)} sản phẩm</span>
         </div>
+
+        {stockNotice && (
+          <div className={styles.stockNotice}>
+            {stockNotice}
+          </div>
+        )}
 
         <div className={styles.layout}>
           {/* Cart items */}
@@ -191,10 +233,23 @@ export default function Cart() {
                   )}
                 </span>
 
-                <div className={styles.qtyControl}>
-                  <button onClick={() => item.quantity === 1 ? remove(item.id) : setQty(item.id, item.quantity - 1)}>−</button>
-                  <span>{item.quantity}</span>
-                  <button onClick={() => setQty(item.id, item.quantity + 1)}>+</button>
+                <div className={styles.quantityCell}>
+                  <div className={styles.qtyControl}>
+                    <button onClick={() => item.quantity === 1 ? remove(item.id) : setQty(item.id, item.quantity - 1)}>−</button>
+                    <span>{item.quantity}</span>
+                    <button
+                      onClick={() => increaseQuantity(item)}
+                      className={hasStockLimit(item) && item.quantity >= item.availableStock ? styles.limitBtn : ''}
+                      title={hasStockLimit(item) ? `Tối đa ${item.availableStock} ${getStockUnit(item)}` : 'Tăng số lượng'}
+                    >
+                      +
+                    </button>
+                  </div>
+                  {hasStockLimit(item) && (
+                    <small className={styles.stockHint}>
+                      Tối đa {item.availableStock} {getStockUnit(item)}
+                    </small>
+                  )}
                 </div>
 
                 <span className={styles.itemTotal}>{formatPrice(item.price * item.quantity)}</span>
@@ -247,16 +302,13 @@ export default function Cart() {
 
         {/* Checkout Modal */}
         {showCheckout && (
-          <div className={styles.modal} onClick={checkoutStep === 1 ? closeCheckoutModal : undefined}>
+          <div className={styles.modal} onClick={closeCheckoutModal}>
             <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
 
-              {/* ── STEP 1: Nhập thông tin ── */}
-              {checkoutStep === 1 && (
-                <>
-                  <div className={styles.modalHeader}>
-                    <h2>📋 Thông tin đặt hàng</h2>
-                    <button className={styles.closeBtn} onClick={closeCheckoutModal}>✕</button>
-                  </div>
+              <div className={styles.modalHeader}>
+                <h2>📋 Thông tin đặt hàng</h2>
+                <button className={styles.closeBtn} onClick={closeCheckoutModal}>✕</button>
+              </div>
 
                   <div className={styles.formGroup}>
                     <label>Tên khách hàng *</label>
@@ -298,32 +350,34 @@ export default function Cart() {
                       style={{ width: '100%', padding: '0.5rem 0.75rem', borderRadius: 8, border: '1.5px solid #e0e0e0', fontSize: '0.95rem', background: '#fff' }}
                     >
                       <option value="">-- Chọn Tỉnh / Thành phố --</option>
-                      {PROVINCES.map(p => (
-                        <option key={p.name} value={p.name}>{p.name}</option>
+                      {provinces.map(p => (
+                        <option key={p.code} value={p.name}>{p.name}</option>
                       ))}
                     </select>
                   </div>
 
                   <div className={styles.formGroup}>
-                    <label>Quận / Huyện *</label>
+                    <label>Xã / Phường *</label>
                     <select
-                      value={checkoutData.district}
-                      onChange={e => handleCheckoutChange('district', e.target.value)}
-                      disabled={!checkoutData.province}
-                      style={{ width: '100%', padding: '0.5rem 0.75rem', borderRadius: 8, border: '1.5px solid #e0e0e0', fontSize: '0.95rem', background: checkoutData.province ? '#fff' : '#f5f5f5' }}
+                      value={checkoutData.ward}
+                      onChange={e => handleCheckoutChange('ward', e.target.value)}
+                      disabled={!checkoutData.province || loadingWards}
+                      style={{ width: '100%', padding: '0.5rem 0.75rem', borderRadius: 8, border: '1.5px solid #e0e0e0', fontSize: '0.95rem', background: checkoutData.province && !loadingWards ? '#fff' : '#f5f5f5' }}
                     >
-                      <option value="">-- Chọn Quận / Huyện --</option>
-                      {selectedProvince?.districts.map(d => (
-                        <option key={d} value={d}>{d}</option>
+                      <option value="">
+                        {loadingWards ? '-- Đang tải xã/phường...' : '-- Chọn Xã / Phường --'}
+                      </option>
+                      {wards.map(w => (
+                        <option key={w.code} value={w.name}>{w.name}</option>
                       ))}
                     </select>
                   </div>
 
                   <div className={styles.formGroup}>
-                    <label>Số nhà, tên đường, phường/xã *</label>
+                    <label>Số nhà, tên đường *</label>
                     <input
                       type="text"
-                      placeholder="VD: 123 Nguyễn Huệ, P. Bến Nghé"
+                      placeholder="VD: 123 Nguyễn Huệ"
                       value={checkoutData.streetAddress}
                       onChange={e => handleCheckoutChange('streetAddress', e.target.value)}
                     />
@@ -347,62 +401,6 @@ export default function Cart() {
                       {checkoutLoading ? 'Đang xử lý...' : 'Xác nhận đặt hàng →'}
                     </button>
                   </div>
-                </>
-              )}
-
-              {/* ── STEP 2: Đặt hàng thành công → nhắc đặt cọc ── */}
-              {checkoutStep === 2 && checkoutResult && (
-                <>
-                  <div className={styles.modalHeader}>
-                    <h2>✅ Đặt hàng thành công!</h2>
-                    <button className={styles.closeBtn} onClick={closeCheckoutModal}>✕</button>
-                  </div>
-
-                  <div style={{ textAlign: 'center', padding: '0.5rem 0 1rem' }}>
-                    <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>🎉</div>
-                    <p style={{ fontSize: '1rem', color: '#333', marginBottom: '0.25rem' }}>
-                      Đơn hàng <strong>#{checkoutResult.orderId}</strong> đã được tạo thành công!
-                    </p>
-                    <p style={{ fontSize: '0.9rem', color: '#666' }}>
-                      Vui lòng hoàn tất bước đặt cọc để xác nhận đơn hàng
-                    </p>
-                  </div>
-
-                  {/* Tóm tắt số tiền */}
-                  <div style={{ background: '#f9f9f9', border: '1px solid #e0e0e0', borderRadius: 8, padding: '1rem', marginBottom: '1rem' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
-                      <span style={{ color: '#555' }}>Tổng đơn hàng:</span>
-                      <strong>{formatPrice(checkoutResult.totalAmount)}</strong>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span style={{ color: '#555' }}>Cần đặt cọc ngay (50%):</span>
-                      <strong style={{ color: '#e65100', fontSize: '1.1rem' }}>{formatPrice(checkoutResult.depositAmount)}</strong>
-                    </div>
-                    <div style={{ marginTop: '0.5rem', padding: '0.5rem', background: '#fff3e0', borderRadius: 4, fontSize: '0.8rem', color: '#bf360c' }}>
-                      ⏰ Đơn hàng tự huỷ sau <strong>24 giờ</strong> nếu chưa nhận được cọc
-                    </div>
-                  </div>
-
-                  <div className={styles.modalFooter} style={{ flexDirection: 'column', gap: '0.5rem' }}>
-                    {/* Nút chính: đến trang thanh toán */}
-                    <button
-                      className={styles.submitBtn}
-                      onClick={goToPayment}
-                      style={{ width: '100%', padding: '0.85rem', fontSize: '1rem', background: '#e65100' }}
-                    >
-                      💳 Thanh toán cọc ngay → {formatPrice(checkoutResult.depositAmount)}
-                    </button>
-                    {/* Nút phụ: để sau */}
-                    <button
-                      className={styles.cancelBtn}
-                      onClick={closeCheckoutModal}
-                      style={{ width: '100%', textAlign: 'center' }}
-                    >
-                      Để sau — xem trong Lịch sử đơn hàng
-                    </button>
-                  </div>
-                </>
-              )}
 
             </div>
           </div>

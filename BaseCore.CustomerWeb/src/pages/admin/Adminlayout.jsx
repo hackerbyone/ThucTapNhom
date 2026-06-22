@@ -69,7 +69,7 @@ export default function AdminLayout({ children }) {
             <div className="info">
               <span className="d-block text-white">{user?.username || user?.name}</span>
               <small className="text-muted">
-                {user?.role === 'Admin' ? 'Quản trị viên' : user?.role === 'Warehouse' ? 'Quản lý kho' : user?.role}
+                {isAdmin() ? 'Quản trị viên' : isWarehouse() ? 'Quản lý kho' : 'Người dùng'}
               </small>
             </div>
           </div>

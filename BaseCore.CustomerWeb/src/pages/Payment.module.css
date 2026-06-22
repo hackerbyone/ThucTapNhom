@@ -548,69 +548,6 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── VNPay Section ─── */
-.vnpaySection {
-  margin-top: 1.25rem;
-  padding-top: 1.25rem;
-  border-top: 1px dashed #e0e0e0;
-  text-align: center;
-}
-
-.vnpayOrDivider {
-  color: #999;
-  font-size: 12px;
-  margin-bottom: 12px;
-}
-
-.vnpayBtn {
-  width: 100%;
-  padding: 13px 20px;
-  background: linear-gradient(135deg, #005bac, #003f80);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: all .2s;
-}
-
-.vnpayBtn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #0069c9, #004d99);
-  box-shadow: 0 4px 16px rgba(0,91,172,.35);
-}
-
-.vnpayBtn:disabled {
-  opacity: .7;
-  cursor: not-allowed;
-}
-
-.vnpayLogo {
-  height: 22px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-}
-
-.vnpayNote {
-  font-size: 11px;
-  color: #999;
-  margin: 8px 0 0;
-}
-
-.vnpayError {
-  background: #ffebee;
-  color: #c62828;
-  padding: 10px 14px;
-  border-radius: 6px;
-  font-size: 13px;
-  margin-bottom: 10px;
-  text-align: left;
-}
-
 @media (max-width: 768px) {
   .layout {
     grid-template-columns: 1fr;

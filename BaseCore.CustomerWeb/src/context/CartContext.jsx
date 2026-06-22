@@ -9,6 +9,7 @@ function cartReducer(state, action) {
     case 'SET_CART':
       return action.payload;
     case 'ADD': {
+      const quantity = Math.max(1, Number(action.item.quantity) || 1);
       // Ghép key bằng productId + selectedGender để phân biệt đực/cái/cặp
       const key = `${action.item.productId}-${action.item.selectedGender ?? ''}`;
       const exists = state.find(i =>
@@ -17,10 +18,10 @@ function cartReducer(state, action) {
       if (exists)
         return state.map(i =>
           `${i.productId}-${i.selectedGender ?? ''}` === key
-            ? { ...i, quantity: i.quantity + 1 }
+            ? { ...i, quantity: i.quantity + quantity }
             : i
         );
-      return [...state, { ...action.item, quantity: 1 }];
+      return [...state, { ...action.item, quantity }];
     }
     case 'REMOVE':
       return state.filter(i => i.id !== action.id);
@@ -44,6 +45,7 @@ const mapCartItems = (items) =>
     name: i.productName,
     price: i.price,
     quantity: i.quantity,
+    availableStock: i.availableStock ?? null,
     image: i.imageUrl,
     selectedGender: i.selectedGender ?? null,
   }));
@@ -80,19 +82,20 @@ export function CartProvider({ children }) {
   }, [isAuthenticated]);
 
   // item phải có selectedGender khi sản phẩm có phân giới tính
-  const add = useCallback(async (item, selectedGender = null) => {
+  const add = useCallback(async (item, selectedGender = null, quantity = 1) => {
     const productId = item.productId || item.id;
     if (!productId) {
       setError('Sản phẩm không có mã ID');
-      return;
+      return { ok: false, message: 'Sản phẩm không có mã ID' };
     }
+    const requestedQuantity = Math.max(1, Number(quantity) || 1);
     const normalizedItem = {
       id: null, // sẽ được cập nhật sau khi API trả về
       productId,
       name: item.name || item.productName || '',
       price: item.price || 0,
       image: item.image || item.imageUrl || '',
-      quantity: 1,
+      quantity: requestedQuantity,
       selectedGender,
     };
 
@@ -100,12 +103,13 @@ export function CartProvider({ children }) {
 
     try {
       setIsLoading(true);
-      const data = await cartService.addItem(productId, 1, selectedGender);
+      const data = await cartService.addItem(productId, requestedQuantity, selectedGender);
       // Đồng bộ lại với server để lấy đúng id
       if (data && data.items) {
         dispatch({ type: 'SET_CART', payload: mapCartItems(data.items) });
       }
       setError(null);
+      return { ok: true };
     } catch (err) {
       try {
         const data = await cartService.getCart();
@@ -114,6 +118,7 @@ export function CartProvider({ children }) {
         console.error('Rollback failed:', rollbackErr);
       }
       setError(err.message || 'Thêm sản phẩm thất bại');
+      return { ok: false, message: err.message || 'Thêm sản phẩm thất bại' };
     } finally {
       setIsLoading(false);
     }

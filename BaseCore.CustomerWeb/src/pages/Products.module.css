@@ -49,18 +49,102 @@
 .catBtn:hover { background: var(--pearl); color: var(--text); }
 .catBtn.active { background: rgba(6,182,212,0.1); color: var(--teal); font-weight: 500; }
 
-.range {
-  width: 100%;
-  accent-color: var(--aqua);
+.dualRange {
+  position: relative;
+  height: 20px;
+  margin: 10px 0 4px;
 }
 
-.rangeLabel {
+.dualRangeTrack {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.dualRangeFill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: var(--teal);
+  border-radius: 2px;
+}
+
+.rangeInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  pointer-events: none;
+  appearance: none;
+  outline: none;
+}
+
+.rangeInput::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--teal);
+  cursor: grab;
+  pointer-events: all;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  transition: transform 0.1s, border-color 0.15s;
+}
+
+.rangeInput::-webkit-slider-thumb:hover {
+  border-color: var(--aqua);
+  transform: scale(1.15);
+}
+
+.rangeInput:active::-webkit-slider-thumb { cursor: grabbing; }
+
+.rangeInput::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--teal);
+  cursor: grab;
+  pointer-events: all;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.rangeLabels {
   display: flex;
   justify-content: space-between;
   font-size: 12px;
   color: var(--text-muted);
-  margin-top: 4px;
+  margin-top: 6px;
 }
+
+.clearPriceBtn {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 6px 12px;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--font-body);
+  text-align: center;
+}
+
+.clearPriceBtn:hover { border-color: #f87171; color: #f87171; }
 
 
 .toolbar {

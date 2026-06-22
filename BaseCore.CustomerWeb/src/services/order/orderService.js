@@ -39,30 +39,18 @@ export const orderService = {
     return handleResponse(response, 'Failed to cancel order');
   },
 
-  createVnpayUrl: async (orderId) => {
-    const response = await fetch(buildUrl(`/api/vnpay/create/${orderId}`), {
-      method: 'POST',
+  getByUserId: async (userId, page = 1, pageSize = 10) => {
+    const params = { userId, page, pageSize };
+    const response = await fetch(buildUrl('/api/orders', params), {
+      method: 'GET',
       headers: getHeaders(true),
     });
-    return handleResponse(response, 'Không thể tạo liên kết thanh toán VNPay');
+    return handleResponse(response, 'Failed to fetch user orders');
   },
 
-  verifyVnpay: async (queryString) => {
-    const response = await fetch(buildUrl('/api/vnpay/verify') + '?' + queryString, {
-      method: 'GET',
-      headers: getHeaders(false),
-    });
-    return handleResponse(response, 'Không thể xác thực thanh toán VNPay');
-  },
-
-  getByUserId: async (userId, page = 1, pageSize = 10) => {
-    const params = {
-      userId,
-      page,
-      pageSize,
-    };
-
-    const response = await fetch(buildUrl('/api/orders', params), {
+  // Admin: lấy đơn của một user cụ thể theo ID
+  getByUserIdAdmin: async (userId) => {
+    const response = await fetch(buildUrl(`/api/orders/user/${userId}`), {
       method: 'GET',
       headers: getHeaders(true),
     });

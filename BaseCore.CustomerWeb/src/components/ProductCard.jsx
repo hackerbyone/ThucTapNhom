@@ -153,6 +153,7 @@ export default function ProductCard({ product }) {
   const { add } = useCart()
   const [showPopup, setShowPopup] = useState(false)
   const [added, setAdded] = useState(false)
+  const [addError, setAddError] = useState('')
 
   const discount = product.oldPrice
     ? Math.round((1 - product.price / product.oldPrice) * 100)
@@ -170,9 +171,13 @@ export default function ProductCard({ product }) {
 
   const doAdd = async (gender, qty = 1) => {
     setShowPopup(false)
-    for (let i = 0; i < qty; i++) {
-      await add(product, gender)
+    const result = await add(product, gender, qty)
+    if (!result?.ok) {
+      setAddError(result?.message || 'Không thể thêm sản phẩm vào giỏ')
+      setTimeout(() => setAddError(''), 3000)
+      return
     }
+    setAddError('')
     setAdded(true)
     setTimeout(() => setAdded(false), 2000)
   }
@@ -215,6 +220,7 @@ export default function ProductCard({ product }) {
           >
             {added ? '✓ Đã thêm' : isGenderProduct ? '🐟 Chọn & Thêm' : '+ Thêm vào giỏ'}
           </button>
+          {addError && <p className={styles.cardError}>{addError}</p>}
         </div>
       </div>
 

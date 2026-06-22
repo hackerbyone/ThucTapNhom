@@ -11,7 +11,7 @@ function formatPrice(n) { return n.toLocaleString('vi-VN') + 'đ' }
 export default function ProductDetail() {
   const { id } = useParams()
   const navigate = useNavigate()
-  const { add } = useCart()
+  const { add, cart } = useCart()
 
   const [product, setProduct] = useState(null)
   const [related, setRelated] = useState([])
@@ -34,6 +34,7 @@ export default function ProductDetail() {
         const res = await productService.getById(parseInt(id))
         setProduct(res)
         setSelectedGender(null)
+        setQty(1)
 
         if (res.categoryId) {
           const allProducts = await productService.getAll('', res.categoryId, 1, 10)
@@ -90,6 +91,28 @@ export default function ProductDetail() {
     ? genderOptions.find(o => o.value === selectedGender)?.stock ?? 0
     : null
 
+  const currentCartQuantity = cart.find(i =>
+    i.productId === product.id && (i.selectedGender ?? null) === (isGenderProduct ? selectedGender : null)
+  )?.quantity ?? 0
+
+  const maxStockForSelection = isGenderProduct ? selectedGenderStock : totalStock
+  const remainingStock = maxStockForSelection === null
+    ? null
+    : Math.max(0, maxStockForSelection - currentCartQuantity)
+  const stockUnit = selectedGender === 'Cặp'
+    ? 'cặp'
+    : selectedGender
+      ? `con ${selectedGender.toLowerCase()}`
+      : 'sản phẩm'
+
+  const getStockLimitMessage = () => {
+    if (maxStockForSelection === null) return ''
+    if (currentCartQuantity >= maxStockForSelection) {
+      return `Bạn đã có ${currentCartQuantity} ${stockUnit} trong giỏ. Kho chỉ còn ${maxStockForSelection} ${stockUnit}.`
+    }
+    return `Chỉ còn có thể thêm ${remainingStock} ${stockUnit} nữa. Trong giỏ đã có ${currentCartQuantity}, tồn kho tối đa ${maxStockForSelection}.`
+  }
+
   const isOutOfStock = isGenderProduct
     ? (product.maleStock <= 0 && product.femaleStock <= 0)
     : product.stock <= 0
@@ -110,15 +133,42 @@ export default function ProductDetail() {
   const currentPrice = getPrice()
   const totalPrice = currentPrice * qty
 
-  const handleAdd = async () => {
+  const increaseDetailQty = () => {
     if (isGenderProduct && !selectedGender) {
-      setGenderError('Vui lòng chọn giới tính trước khi thêm vào giỏ')
+      setGenderError('Vui lòng chọn giới tính trước khi tăng số lượng')
+      return
+    }
+    if (remainingStock !== null && qty >= remainingStock) {
+      setGenderError(getStockLimitMessage())
       return
     }
     setGenderError('')
-    for (let i = 0; i < qty; i++) await add(product, isGenderProduct ? selectedGender : null)
+    setQty(q => q + 1)
+  }
+
+  const handleAdd = async () => {
+    if (isGenderProduct && !selectedGender) {
+      setGenderError('Vui lòng chọn giới tính trước khi thêm vào giỏ')
+      return false
+    }
+    if (remainingStock !== null && remainingStock <= 0) {
+      setGenderError(getStockLimitMessage())
+      return false
+    }
+    if (remainingStock !== null && qty > remainingStock) {
+      setQty(Math.max(1, remainingStock))
+      setGenderError(getStockLimitMessage())
+      return false
+    }
+    setGenderError('')
+    const result = await add(product, isGenderProduct ? selectedGender : null, qty)
+    if (!result?.ok) {
+      setGenderError(result?.message || 'Không thể thêm sản phẩm vào giỏ')
+      return false
+    }
     setAdded(true)
     setTimeout(() => setAdded(false), 2000)
+    return true
   }
 
   const handleBuyNow = async () => {
@@ -126,8 +176,8 @@ export default function ProductDetail() {
       setGenderError('Vui lòng chọn giới tính trước khi mua')
       return
     }
-    await handleAdd()
-    navigate('/cart')
+    const addedOk = await handleAdd()
+    if (addedOk) navigate('/cart')
   }
 
   return (
@@ -221,7 +271,7 @@ export default function ProductDetail() {
                   {genderOptions.map(opt => (
                     <button
                       key={opt.value}
-                      onClick={() => { setSelectedGender(opt.value); setGenderError('') }}
+                      onClick={() => { setSelectedGender(opt.value); setQty(1); setGenderError('') }}
                       style={{
                         padding: '0.4rem 1rem',
                         borderRadius: '20px',
@@ -247,6 +297,11 @@ export default function ProductDetail() {
                     Còn <strong>{selectedGenderStock}</strong> {selectedGender === 'Cặp' ? 'cặp' : `con ${selectedGender?.toLowerCase()}`} trong kho
                   </span>
                 )}
+                {selectedGenderStock !== null && currentCartQuantity > 0 && (
+                  <span style={{ fontSize: '0.85rem', color: '#b45309' }}>
+                    Trong giỏ đã có <strong>{currentCartQuantity}</strong>, bạn còn có thể thêm <strong>{remainingStock}</strong> {stockUnit}.
+                  </span>
+                )}
                 {genderError && (
                   <span style={{ color: '#e53935', fontSize: '0.85rem' }}>{genderError}</span>
                 )}
@@ -258,7 +313,7 @@ export default function ProductDetail() {
               <div className={styles.qtyControl}>
                 <button onClick={() => setQty(q => Math.max(1, q - 1))}>−</button>
                 <span>{qty}</span>
-                <button onClick={() => setQty(q => q + 1)}>+</button>
+                <button onClick={increaseDetailQty}>+</button>
               </div>
             </div>
 

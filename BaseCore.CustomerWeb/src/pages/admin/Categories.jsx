@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { categoryService } from '../../services/category/categoryService';
+import { productService } from '../../services/product/productService';
 import { useAuth } from '../../context/AuthContext';
 
 const Categories = () => {
@@ -15,6 +16,7 @@ const Categories = () => {
         description: '',
     });
     const [error, setError] = useState('');
+    const [productCounts, setProductCounts] = useState({});
     const { isAdmin } = useAuth();
 
     useEffect(() => {
@@ -25,12 +27,27 @@ const Categories = () => {
         setLoading(true);
         try {
             const response = await categoryService.getAll();
-            setCategories(response || []);
+            const cats = response || [];
+            setCategories(cats);
+            loadProductCounts(cats);
         } catch (error) {
             console.error('Failed to load categories:', error);
         } finally {
             setLoading(false);
         }
+    };
+
+    const loadProductCounts = async (cats) => {
+        try {
+            const results = await Promise.all(
+                cats.map(cat => productService.getAll('', cat.id, 1, 1))
+            );
+            const counts = {};
+            cats.forEach((cat, i) => {
+                counts[cat.id] = results[i].totalCount ?? 0;
+            });
+            setProductCounts(counts);
+        } catch (e) { /* ignore */ }
     };
 
     const openModal = (category = null) => {
@@ -188,13 +205,14 @@ const Categories = () => {
                                                 <th style={{ width: '80px' }}>ID</th>
                                                 <th>Tên danh mục</th>
                                                 <th>Mô tả</th>
+                                                <th style={{ width: '130px' }} className="text-center">Số sản phẩm</th>
                                                 {isAdmin() && <th style={{ width: '130px' }}>Thao tác</th>}
                                             </tr>
                                         </thead>
                                         <tbody>
                                             {filteredCategories.length === 0 ? (
                                                 <tr>
-                                                    <td colSpan={isAdmin() ? 4 : 3} className="text-center py-4 text-muted">
+                                                    <td colSpan={isAdmin() ? 5 : 4} className="text-center py-4 text-muted">
                                                         <i className="fas fa-folder-open fa-2x mb-2 d-block"></i>
                                                         {searchQuery ? 'Không tìm thấy danh mục nào' : 'Chưa có danh mục nào'}
                                                     </td>
@@ -205,6 +223,15 @@ const Categories = () => {
                                                         <td className="text-muted">{category.id}</td>
                                                         <td><strong>{category.name}</strong></td>
                                                         <td className="text-muted">{category.description || '—'}</td>
+                                                        <td className="text-center">
+                                                            {productCounts[category.id] === undefined ? (
+                                                                <span className="text-muted small">...</span>
+                                                            ) : (
+                                                                <span className={`badge ${productCounts[category.id] > 0 ? 'badge-primary' : 'badge-secondary'}`}>
+                                                                    {productCounts[category.id]}
+                                                                </span>
+                                                            )}
+                                                        </td>
                                                         {isAdmin() && (
                                                             <td>
                                                                 <button

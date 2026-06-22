@@ -17,6 +17,17 @@
 
 .header span { color: var(--text-muted); font-size: 14px; }
 
+.stockNotice {
+  margin: -1rem 0 1.5rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid #fed7aa;
+  border-radius: 8px;
+  background: #fff7ed;
+  color: #9a3412;
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .layout {
   display: grid;
   grid-template-columns: 1fr 340px;
@@ -109,6 +120,24 @@
 
 .qtyControl button:hover { background: rgba(6,182,212,0.1); }
 .qtyControl span { width: 32px; text-align: center; font-size: 14px; font-weight: 500; }
+
+.quantityCell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.stockHint {
+  color: #b45309;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.limitBtn {
+  color: #b45309;
+  background: #fff7ed !important;
+}
 
 .itemTotal { font-size: 15px; font-weight: 600; color: var(--teal); }
 
